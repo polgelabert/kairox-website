@@ -27,7 +27,7 @@ export function WorkCard({
 
   return (
     <article
-      className="relative p-8 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-raised)] overflow-hidden group hover:border-[var(--color-border-strong)] transition-colors"
+      className="relative p-6 sm:p-8 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-raised)] overflow-hidden group hover:border-[var(--color-border-strong)] transition-colors"
     >
       <div
         className="absolute inset-x-0 top-0 h-px opacity-60"

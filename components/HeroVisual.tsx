@@ -76,13 +76,13 @@ export function HeroVisual({ d }: { d: Dictionary["heroVisual"] }) {
           </span>
         </div>
 
-        <div className="grid grid-cols-[120px_1fr] min-h-[320px]">
+        <div className="grid grid-cols-[84px_1fr] sm:grid-cols-[120px_1fr] min-h-[300px] sm:min-h-[320px]">
           {/* Channels */}
-          <div className="border-r border-[var(--color-border)] bg-[var(--color-bg-raised)]/40 p-3 space-y-1.5">
+          <div className="border-r border-[var(--color-border)] bg-[var(--color-bg-raised)]/40 p-2 sm:p-3 space-y-1 sm:space-y-1.5">
             {counts.map((ch) => (
               <div
                 key={ch.l}
-                className={`flex items-center justify-between rounded px-2 py-1.5 text-[11px] transition-colors ${
+                className={`flex items-center justify-between rounded px-1.5 sm:px-2 py-1.5 text-[10px] sm:text-[11px] transition-colors ${
                   ch.active
                     ? "bg-[var(--color-accent-soft)] text-[var(--color-fg-strong)]"
                     : "text-[var(--color-fg-muted)]"
@@ -95,7 +95,7 @@ export function HeroVisual({ d }: { d: Dictionary["heroVisual"] }) {
           </div>
 
           {/* Main panel */}
-          <div className="p-4 space-y-3">
+          <div className="p-3 sm:p-4 space-y-3 min-w-0">
             <div className="grid grid-cols-3 gap-2">
               <Metric label={d.response} value={`${respMs}s`} tone="ok" />
               <Metric label={d.open} value={openCount.toLocaleString()} tone="muted" />

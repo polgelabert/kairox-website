@@ -18,20 +18,20 @@ export function Hero({ locale }: { locale: Locale }) {
   return (
     <div className="relative overflow-hidden">
       <div className="absolute inset-0 hero-glow pointer-events-none" />
-      <Container className="relative pt-20 pb-20 sm:pt-28 sm:pb-28">
-        <div className="grid gap-14 lg:gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center">
+      <Container className="relative pt-14 pb-16 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28">
+        <div className="grid gap-10 lg:gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center">
           <div>
             <MonoLabel>{d.hero.eyebrow}</MonoLabel>
-            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-balance leading-[1.05]">
+            <h1 className="mt-5 text-[34px] leading-[1.08] sm:text-5xl md:text-6xl font-semibold tracking-tight text-balance">
               <span className="text-[var(--color-fg-strong)]">{headHead}</span>
               {headTail ? (
                 <span className="kx-gradient-text"> {headTail.trim()}</span>
               ) : null}
             </h1>
-            <p className="mt-7 text-lg sm:text-xl text-[var(--color-fg-muted)] leading-relaxed max-w-2xl">
+            <p className="mt-5 sm:mt-7 text-base sm:text-xl text-[var(--color-fg-muted)] leading-relaxed max-w-2xl">
               {d.hero.subhead}
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-8 sm:mt-10 flex flex-wrap gap-3">
               <Button href={localePath(locale, "contact")} variant="primary">
                 {d.hero.cta} →
               </Button>
@@ -39,7 +39,7 @@ export function Hero({ locale }: { locale: Locale }) {
                 {d.hero.secondaryCta}
               </Button>
             </div>
-            <div className="mt-12 flex items-center gap-5 text-[var(--color-fg-subtle)] mono text-xs">
+            <div className="mt-10 sm:mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 text-[var(--color-fg-subtle)] mono text-[11px] sm:text-xs">
               <Platform name="WhatsApp" />
               <Platform name="Telegram" />
               <Platform name="Instagram" />

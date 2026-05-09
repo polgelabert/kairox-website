@@ -53,9 +53,14 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
         </div>
 
-        <div className="mt-16 pt-6 border-t border-[var(--color-border)] flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--color-fg-subtle)] mono">
+        <div
+          className="mt-12 sm:mt-16 pt-6 border-t border-[var(--color-border)] flex flex-col sm:flex-row justify-between gap-2 sm:gap-3 text-[11px] sm:text-xs text-[var(--color-fg-subtle)] mono leading-relaxed"
+          style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+        >
           <div>
-            © {year} Kairox · CIF B25903097 · Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)
+            © {year} Kairox · CIF B25903097
+            <span className="hidden sm:inline"> · Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)</span>
+            <span className="block sm:hidden">Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)</span>
           </div>
           <div>{d.footer.rights}</div>
         </div>

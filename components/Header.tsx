@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "./ui/Container";
 import { Button } from "./ui/Button";
+import { MobileNav } from "./MobileNav";
 import { localePath, getDictionary, LOCALES } from "@/lib/i18n";
 import type { Locale } from "@/content/types";
 
@@ -42,9 +43,14 @@ export function Header({ locale }: { locale: Locale }) {
 
         <div className="flex items-center gap-4">
           <LangSwitcher current={locale} />
-          <Button href={localePath(locale, "contact")} variant="primary">
+          <Button
+            href={localePath(locale, "contact")}
+            variant="primary"
+            className="hidden md:inline-flex"
+          >
             {d.nav.cta}
           </Button>
+          <MobileNav locale={locale} />
         </div>
       </Container>
     </header>
@@ -64,16 +70,16 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 
 function LangSwitcher({ current }: { current: Locale }) {
   return (
-    <div className="hidden sm:flex items-center gap-1 mono text-xs">
+    <div className="hidden md:flex items-center gap-1 mono text-xs">
       {LOCALES.map((l, i) => (
         <span key={l} className="flex items-center gap-1">
           <Link
             href={`/${l}`}
-            className={
+            className={`inline-flex items-center justify-center min-w-[20px] h-8 px-1 ${
               l === current
                 ? "text-[var(--color-fg-strong)]"
                 : "text-[var(--color-fg-subtle)] hover:text-[var(--color-fg-muted)]"
-            }
+            }`}
           >
             {l}
           </Link>

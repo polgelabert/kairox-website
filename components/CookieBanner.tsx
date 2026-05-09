@@ -32,7 +32,10 @@ export function CookieBanner({ locale }: { locale: Locale }) {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:max-w-md z-50">
+    <div
+      className="fixed left-3 right-3 sm:left-6 sm:right-auto sm:max-w-md z-50"
+      style={{ bottom: "max(env(safe-area-inset-bottom), 0.75rem)" }}
+    >
       <div className="rounded-lg border border-[var(--color-border-strong)] bg-[var(--color-bg-elevated)] p-5 shadow-2xl shadow-black/40">
         <p className="text-sm text-[var(--color-fg)] leading-relaxed">
           {d.cookies.body}{" "}
@@ -46,13 +49,13 @@ export function CookieBanner({ locale }: { locale: Locale }) {
         <div className="mt-4 flex flex-wrap gap-2">
           <button
             onClick={() => choose("accepted")}
-            className="mono text-xs h-8 px-4 rounded-md bg-[var(--color-fg-strong)] text-[var(--color-bg)] hover:bg-white"
+            className="mono text-xs h-10 px-5 rounded-md bg-[var(--color-fg-strong)] text-[var(--color-bg)] hover:bg-white"
           >
             {d.cookies.accept}
           </button>
           <button
             onClick={() => choose("rejected")}
-            className="mono text-xs h-8 px-4 rounded-md border border-[var(--color-border-strong)] text-[var(--color-fg-strong)] hover:border-white/30"
+            className="mono text-xs h-10 px-5 rounded-md border border-[var(--color-border-strong)] text-[var(--color-fg-strong)] hover:border-white/30"
           >
             {d.cookies.reject}
           </button>

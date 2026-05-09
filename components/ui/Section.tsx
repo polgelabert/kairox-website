@@ -13,7 +13,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`py-20 sm:py-28 border-t border-[var(--color-border)] ${className}`}
+      className={`py-14 sm:py-20 lg:py-28 border-t border-[var(--color-border)] ${className}`}
     >
       <Container>{children}</Container>
     </section>
@@ -44,11 +44,11 @@ export function SectionHeading({
           <MonoLabel>{eyebrow}</MonoLabel>
         </div>
       ) : null}
-      <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--color-fg-strong)] text-balance">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-[var(--color-fg-strong)] text-balance leading-tight">
         {title}
       </h2>
       {body ? (
-        <p className="mt-5 text-lg text-[var(--color-fg-muted)] leading-relaxed">
+        <p className="mt-4 sm:mt-5 text-base sm:text-lg text-[var(--color-fg-muted)] leading-relaxed">
           {body}
         </p>
       ) : null}

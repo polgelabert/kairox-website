@@ -22,12 +22,37 @@ html {
   color: #e5e5e5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: var(--font-inter), system-ui, sans-serif;
   background: #0a0a0a;
   color: #e5e5e5;
+  overflow-x: clip;
+}
+
+/* Prevent iOS zoom on input focus (any input <16px triggers zoom) */
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+/* Better tap behavior — no 300ms delay, no flash */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Honor reduced motion preference everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 ::selection {

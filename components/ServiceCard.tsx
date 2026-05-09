@@ -20,7 +20,7 @@ export function ServiceCard({
   const t = themes[index % themes.length];
 
   return (
-    <article className="group relative p-7 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-raised)] hover:border-[var(--color-border-strong)] transition-colors overflow-hidden">
+    <article className="group relative p-5 sm:p-7 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-raised)] hover:border-[var(--color-border-strong)] transition-colors overflow-hidden">
       <div
         className="absolute inset-x-0 top-0 h-px opacity-60"
         style={{
