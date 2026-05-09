@@ -65,9 +65,9 @@ export function LangSwitcher({
   }
 
   return (
-    <div className="hidden md:flex items-center gap-1 mono text-xs">
+    <div className="flex items-center gap-0.5 sm:gap-1 mono text-[11px] sm:text-xs">
       {LOCALES.map((l, i) => (
-        <span key={l} className="flex items-center gap-1">
+        <span key={l} className="flex items-center gap-0.5 sm:gap-1">
           <Link
             href={buildLocaleHref(pathname, l)}
             className={`inline-flex items-center justify-center min-w-[20px] h-8 px-1 ${
