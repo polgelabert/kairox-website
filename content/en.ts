@@ -1,0 +1,299 @@
+import type { Dictionary } from "./types";
+
+export const en: Dictionary = {
+  meta: {
+    title: "Kairox — The back office for messaging-first businesses",
+    description:
+      "We build custom dashboards, social operations systems and automation infrastructure for teams running across WhatsApp, Telegram, Instagram, Reddit and TikTok.",
+  },
+  nav: {
+    services: "Services",
+    work: "Work",
+    about: "About",
+    contact: "Contact",
+    cta: "Let's talk",
+  },
+  hero: {
+    eyebrow: "studio · engineering · infrastructure",
+    headline: "The back office for messaging-first businesses.",
+    subhead:
+      "We build custom dashboards, social operations systems and automation infrastructure for teams running across WhatsApp, Telegram, Instagram, Reddit and TikTok. When the off-the-shelf doesn't fit, we build the system that does.",
+    cta: "Let's talk",
+    secondaryCta: "See services",
+  },
+  servicesSection: {
+    eyebrow: "what we build",
+    title:
+      "Four lines. One idea: systems your operation needs that no one ships out of the box.",
+    body: "We're not an agency or a no-code integrator. We design and build custom software for teams that run their day on chat, messaging and social platforms.",
+    seeAll: "See all services",
+  },
+  services: [
+    {
+      slug: "conversational-analytics",
+      name: "Conversational analytics & monitoring",
+      short:
+        "Real-time dashboards for teams handling thousands of conversations a day.",
+      description:
+        "Custom dashboards and monitoring systems for teams running customer conversations across WhatsApp, Telegram, Instagram, Facebook DMs, Reddit and other chat surfaces. Real-time response metrics, sentiment analysis, volume tracking, agent performance, conversion funnels. Built on your data, hosted on your infrastructure or ours.",
+      bullets: [
+        "Real-time response and SLA metrics",
+        "Per-agent and per-channel performance",
+        "Sentiment analysis and categorization",
+        "Conversion funnels over conversations",
+        "Deploy on your cloud or ours",
+      ],
+    },
+    {
+      slug: "social-operations",
+      name: "Multi-platform social operations systems",
+      short:
+        "A unified command center for managing Meta, Reddit, TikTok and X from one place.",
+      description:
+        "A unified command center for teams managing presence across Meta (Instagram + Facebook via Business Suite API), Reddit, TikTok and X. Scheduling, cross-posting with platform-aware adaptation, comment and DM triage, performance analytics, content libraries.",
+      bullets: [
+        "Scheduling and platform-native cross-posting",
+        "DM and comment triage in a single inbox",
+        "Versioned content library",
+        "Unified analytics by brand and channel",
+        "Roles, permissions and approvals for teams",
+      ],
+    },
+    {
+      slug: "telegram-infrastructure",
+      name: "Telegram & messaging automation infrastructure",
+      short:
+        "Bots, channels, broadcast and monetization at production grade. No no-code glue.",
+      description:
+        "Bots, channels, broadcast systems, subscriber management, monetization flows, moderation tooling. Production software, not no-code glue that breaks the first busy weekend.",
+      bullets: [
+        "Custom bots with real business logic",
+        "Broadcast and audience segmentation",
+        "Subscription and payment flows",
+        "Automated moderation and admin tools",
+        "End-to-end metrics and observability",
+      ],
+    },
+    {
+      slug: "bespoke-integrations",
+      name: "Custom integrations & bespoke builds",
+      short: "When the off-the-shelf doesn't fit, we build the system that does.",
+      description:
+        "When the off-the-shelf doesn't fit: CRM connections, ERP and accounting bridges, payment flows, content pipelines, AI integrations on top of existing systems. The line that catches the work that doesn't fit cleanly above.",
+      bullets: [
+        "Integrations with CRMs, ERPs and internal tools",
+        "Content pipelines and AI generation",
+        "Payment and subscription flows",
+        "Cloud infrastructure (Oracle, AWS, RunPod)",
+        "Migrations and legacy system rewrites",
+      ],
+    },
+  ],
+  workSection: {
+    eyebrow: "selected work",
+    title: "A sample of the kind of systems we build.",
+    body: "Anonymized projects. No client names, no exact metrics. The shape of the work, not the gossip.",
+    seeAll: "See all work",
+  },
+  work: [
+    {
+      slug: "messaging-monitoring",
+      title: "Monitoring platform for high-volume chat operation",
+      problem:
+        "A team handling thousands of daily conversations across multiple messaging surfaces with no unified visibility into performance or per-agent load.",
+      built:
+        "Real-time custom platform unifying response metrics, agent performance and conversion analytics in a single dashboard. Direct ingestion from platform APIs, own storage, configurable alerts.",
+      scope: "Discovery + design + build + handover. Monthly maintenance.",
+    },
+    {
+      slug: "multi-platform-social-ops",
+      title: "Multi-platform social operations system",
+      problem:
+        "An operation with simultaneous presence on Instagram, Facebook, Reddit and TikTok managing everything from scattered tools, with context loss across channels.",
+      built:
+        "Command center consolidating management of all four platforms: scheduling, cross-posting with platform-native adaptation, DM and comment triage in one inbox, centralized performance analytics.",
+      scope: "Discovery + incremental build + ongoing roadmap.",
+    },
+    {
+      slug: "telegram-broadcast",
+      title: "Telegram automation infrastructure",
+      problem:
+        "A Telegram-channel and community business needing segmented broadcast, subscription management and moderation tooling that scaled with growth.",
+      built:
+        "Production bot stack and services: segmented broadcast, subscriber management, monetization flows, admin tools, real-time metrics.",
+      scope: "Build + ongoing support.",
+    },
+    {
+      slug: "ai-pipelines",
+      title: "AI generation pipelines on cloud GPU",
+      problem:
+        "A visual generation workflow (image and video) that didn't scale on local hardware in either speed or cost.",
+      built:
+        "Custom infrastructure on RunPod / cloud GPU for ComfyUI pipelines: job orchestration, model management, per-job cost control, integration with upstream content systems.",
+      scope: "Build + cost/quality iteration.",
+    },
+  ],
+  processSection: {
+    eyebrow: "how we work",
+    title: "Few meetings. Lots of code. No promises we can't keep.",
+    body: "A process designed to start small, validate the real scope, and ship software your team can actually run.",
+    steps: [
+      {
+        label: "01",
+        title: "Discovery",
+        body: "Initial call, review of your current operation, mapping of the systems you already have and the real friction points. We come out with a written scope proposal.",
+      },
+      {
+        label: "02",
+        title: "Scope",
+        body: "We define contract, fixed budget, milestones and acceptance criteria. No mid-project surprises.",
+      },
+      {
+        label: "03",
+        title: "Build",
+        body: "Short iterations with continuous visibility. Access to staging from the first milestone.",
+      },
+      {
+        label: "04",
+        title: "Handover",
+        body: "Production deployment, documentation, team training. The system stays in your infrastructure, with code ownership.",
+      },
+      {
+        label: "05",
+        title: "Partnership",
+        body: "Optional maintenance, ongoing evolution, second phase. Most clients stay.",
+      },
+    ],
+  },
+  about: {
+    eyebrow: "who we are",
+    title: "Two partners. Technical depth and commercial focus.",
+    body: "Kairox is a small, deliberate studio. No pyramid, no accounts that pass through three hands before reaching the person who builds. You talk to the people who design the system and the people who build it.",
+    techRole: "Co-founder · Engineering",
+    techBio: "{{COFOUNDER_TECH_BIO}}",
+    salesRole: "Co-founder · Operations & client",
+    salesBio: "{{COFOUNDER_SALES_BIO}}",
+  },
+  contact: {
+    eyebrow: "contact",
+    title: "Tell us what you want to build.",
+    body: "We answer within 24 working hours. If your project fits what we do, we set up a no-cost discovery call.",
+    formName: "Name",
+    formCompany: "Company",
+    formEmail: "Email",
+    formMessage: "Briefly tell us what you have in mind",
+    formConsent:
+      "I have read and accept the {privacy}. I consent to Kairox processing my data to respond to this enquiry.",
+    formConsentRequired: "You must accept the privacy policy.",
+    formSubmit: "Send",
+    formSubmitting: "Sending…",
+    formSuccess: "Message received. We'll reply within 24 hours.",
+    formError: "Something went wrong. Email us directly at {email}.",
+    emailLabel: "Email us directly",
+    bookingLabel: "Or book a call",
+    privacyLink: "privacy policy",
+  },
+  finalCta: {
+    title: "Got a system to build?",
+    body: "Tell us about it. If it fits, we'll come back with a concrete proposal and a realistic timeline.",
+    cta: "Let's talk",
+  },
+  footer: {
+    tagline: "The back office for messaging-first businesses.",
+    nav: "Navigation",
+    legal: "Legal",
+    avisoLegal: "Legal notice",
+    privacidad: "Privacy",
+    cookies: "Cookies",
+    rights: "All rights reserved.",
+  },
+  cookies: {
+    body: "We use strictly necessary cookies for the website to function. We do not use analytics or advertising cookies.",
+    accept: "Accept",
+    reject: "Reject",
+    configure: "Configure",
+    privacyLink: "More info",
+  },
+  legal: {
+    avisoLegal: {
+      title: "Legal notice",
+      body: `In compliance with Article 10 of Spain's Law 34/2002 on Information Society Services and Electronic Commerce (LSSI-CE), the following identification details of the website owner are provided:
+
+· Company name: {{RAZON_SOCIAL}}
+· Tax ID (CIF): {{CIF}}
+· Registered office: {{DIRECCION_FISCAL}}
+· Contact email: {{EMAIL_CONTACTO}}
+· Registry data: {{DATOS_REGISTRALES}}
+
+Access to and use of this website grants user status and implies acceptance of the terms set out in this Legal Notice. The owner reserves the right to modify any content of the site without prior notice.
+
+All content on the site (text, images, code, graphic design) is owned by the owner or used with appropriate authorization. Total or partial reproduction without express authorization is prohibited.
+
+For any matter related to this Legal Notice, contact us at {{EMAIL_CONTACTO}}.`,
+    },
+    privacidad: {
+      title: "Privacy policy",
+      body: `This Privacy Policy describes how {{RAZON_SOCIAL}} ("Kairox") processes personal data collected through this website, in accordance with Regulation (EU) 2016/679 (GDPR) and Spanish Organic Law 3/2018 on Personal Data Protection (LOPDGDD).
+
+1. DATA CONTROLLER
+· Company name: {{RAZON_SOCIAL}}
+· Tax ID: {{CIF}}
+· Address: {{DIRECCION_FISCAL}}
+· Email: {{EMAIL_CONTACTO}}
+
+2. DATA WE COLLECT
+Through the contact form we collect: name, company (optional), email and message content. We do not collect special categories of data.
+
+3. PURPOSE
+We process your data exclusively to respond to your enquiry and, where applicable, to manage any commercial relationship that may arise.
+
+4. LEGAL BASIS
+The legal basis is the express consent you provide when submitting the form by checking the corresponding box.
+
+5. RETENTION
+We retain data for the time necessary to handle your enquiry and, where applicable, for the legally required period if a contractual relationship is established.
+
+6. RECIPIENTS
+We do not transfer data to third parties except by legal obligation. We use hosting and transactional email providers within the European Economic Area or with adequate safeguards.
+
+7. RIGHTS
+You may exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to {{EMAIL_CONTACTO}}. You have the right to lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).
+
+8. SECURITY
+We apply reasonable technical and organizational measures to protect your data.`,
+    },
+    cookies: {
+      title: "Cookie policy",
+      body: `This Cookie Policy explains what cookies are and how we use them on this website.
+
+WHAT ARE COOKIES?
+Cookies are small text files that websites place on your device to store information about your visit.
+
+COOKIES WE USE
+This website uses only strictly necessary cookies for its operation (for example, to remember your language preference or your cookie banner choice). These cookies are exempt from the consent requirement under Article 22.2 of the LSSI.
+
+We do NOT use:
+· Third-party analytics (Google Analytics, etc.)
+· Advertising or tracking
+· Social network cookies
+
+COOKIE MANAGEMENT
+You can configure your browser to block or delete cookies at any time. See your browser's documentation for more information.
+
+CHANGES
+We may update this Cookie Policy. Any changes will be published on this same page.
+
+For any cookie-related enquiries, write to us at {{EMAIL_CONTACTO}}.`,
+    },
+  },
+  routes: {
+    services: "servicios",
+    work: "trabajo",
+    about: "nosotros",
+    contact: "contacto",
+    legal: "legal",
+    avisoLegal: "aviso-legal",
+    privacidad: "privacidad",
+    cookies: "cookies",
+  },
+};

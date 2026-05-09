@@ -1,0 +1,80 @@
+import Link from "next/link";
+import { Container } from "./ui/Container";
+import { Button } from "./ui/Button";
+import { localePath, getDictionary, LOCALES } from "@/lib/i18n";
+import type { Locale } from "@/content/types";
+
+export function Header({ locale }: { locale: Locale }) {
+  const d = getDictionary(locale);
+
+  return (
+    <header className="sticky top-0 z-40 backdrop-blur-md bg-[var(--color-bg)]/70 border-b border-[var(--color-border)]">
+      <Container className="flex items-center justify-between h-16">
+        <Link
+          href={localePath(locale, "home")}
+          className="flex items-center gap-2 group"
+        >
+          <span className="mono text-base font-semibold tracking-tight text-[var(--color-fg-strong)]">
+            kairox
+          </span>
+          <span className="mono text-xs text-[var(--color-accent)] opacity-70 group-hover:opacity-100 transition-opacity">
+            ◆
+          </span>
+        </Link>
+
+        <nav className="hidden md:flex items-center gap-7">
+          <NavLink href={localePath(locale, "services")}>
+            {d.nav.services}
+          </NavLink>
+          <NavLink href={localePath(locale, "work")}>{d.nav.work}</NavLink>
+          <NavLink href={localePath(locale, "about")}>{d.nav.about}</NavLink>
+          <NavLink href={localePath(locale, "contact")}>
+            {d.nav.contact}
+          </NavLink>
+        </nav>
+
+        <div className="flex items-center gap-4">
+          <LangSwitcher current={locale} />
+          <Button href={localePath(locale, "contact")} variant="primary">
+            {d.nav.cta}
+          </Button>
+        </div>
+      </Container>
+    </header>
+  );
+}
+
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg-strong)] transition-colors"
+    >
+      {children}
+    </Link>
+  );
+}
+
+function LangSwitcher({ current }: { current: Locale }) {
+  return (
+    <div className="hidden sm:flex items-center gap-1 mono text-xs">
+      {LOCALES.map((l, i) => (
+        <span key={l} className="flex items-center gap-1">
+          <Link
+            href={`/${l}`}
+            className={
+              l === current
+                ? "text-[var(--color-fg-strong)]"
+                : "text-[var(--color-fg-subtle)] hover:text-[var(--color-fg-muted)]"
+            }
+          >
+            {l}
+          </Link>
+          {i < LOCALES.length - 1 ? (
+            <span className="text-[var(--color-fg-subtle)]">/</span>
+          ) : null}
+        </span>
+      ))}
+    </div>
+  );
+}
