@@ -26,6 +26,16 @@ export type ProcessStep = {
 };
 
 export type Dictionary = {
+  heroVisual: {
+    app: string;
+    live: string;
+    response: string;
+    open: string;
+    csat: string;
+    volume24h: string;
+    feed: { who: string; msg: string; t: string }[];
+    feedExtra: { who: string; msg: string; t: string }[];
+  };
   meta: {
     title: string;
     description: string;

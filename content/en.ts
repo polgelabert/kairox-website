@@ -1,6 +1,26 @@
 import type { Dictionary } from "./types";
 
 export const en: Dictionary = {
+  heroVisual: {
+    app: "kairox · ops console",
+    live: "live",
+    response: "response p50",
+    open: "open",
+    csat: "csat 7d",
+    volume24h: "volume · 24h",
+    feed: [
+      { who: "@maria · WA", msg: "perfect, sending payment tomorrow", t: "now" },
+      { who: "@dani · TG", msg: "can you send the invoice to my email?", t: "1m" },
+      { who: "@r/community", msg: "thread: how do you handle bursts?", t: "3m" },
+    ],
+    feedExtra: [
+      { who: "@laura · IG", msg: "do you reply on weekends? need info urgently", t: "now" },
+      { who: "@carlos · WA", msg: "transfer is done, did it land?", t: "now" },
+      { who: "@alex · TG", msg: "🙏 thanks for the follow-up", t: "now" },
+      { who: "@u/sandra", msg: "comment: exactly what I needed to see", t: "now" },
+      { who: "@nico · WA", msg: "great, locking the call for tuesday", t: "now" },
+    ],
+  },
   meta: {
     title: "Kairox — The back office for messaging-first businesses",
     description:

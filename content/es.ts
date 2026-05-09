@@ -1,6 +1,26 @@
 import type { Dictionary } from "./types";
 
 export const es: Dictionary = {
+  heroVisual: {
+    app: "kairox · consola ops",
+    live: "en vivo",
+    response: "respuesta p50",
+    open: "abiertas",
+    csat: "csat 7d",
+    volume24h: "volumen · 24h",
+    feed: [
+      { who: "@maria · WA", msg: "ok perfecto, mañana cierro pago", t: "ahora" },
+      { who: "@dani · TG", msg: "podéis enviar la factura al correo?", t: "1m" },
+      { who: "@r/community", msg: "thread: cómo gestionáis los picos?", t: "3m" },
+    ],
+    feedExtra: [
+      { who: "@laura · IG", msg: "respondéis en finde? necesito info urgente", t: "ahora" },
+      { who: "@carlos · WA", msg: "transferencia hecha, ya os llega?", t: "ahora" },
+      { who: "@alex · TG", msg: "🙏 gracias por el seguimiento", t: "ahora" },
+      { who: "@u/sandra", msg: "comment: justo lo que necesitaba ver", t: "ahora" },
+      { who: "@nico · WA", msg: "perfecto, cerramos call el martes", t: "ahora" },
+    ],
+  },
   meta: {
     title: "Kairox — El back office para negocios que viven en mensajería",
     description:

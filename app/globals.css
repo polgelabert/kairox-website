@@ -53,6 +53,20 @@ body {
   color: transparent;
 }
 
+@keyframes kx-pop {
+  0%   { transform: translateY(-2px); opacity: 0.4; }
+  60%  { opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes kx-slide {
+  0%   { transform: translateY(-6px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes kx-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 .hero-glow {
   background: radial-gradient(
     ellipse 80% 50% at 50% 0%,

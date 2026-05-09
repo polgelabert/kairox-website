@@ -49,7 +49,7 @@ export function Hero({ locale }: { locale: Locale }) {
           </div>
 
           <div className="lg:pl-4">
-            <HeroVisual />
+            <HeroVisual d={d.heroVisual} />
           </div>
         </div>
       </Container>

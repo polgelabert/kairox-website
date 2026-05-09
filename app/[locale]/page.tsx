@@ -64,8 +64,8 @@ export default async function HomePage({
           body={d.workSection.body}
         />
         <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {d.work.slice(0, 2).map((w) => (
-            <WorkCard key={w.slug} work={w} locale={locale} />
+          {d.work.slice(0, 2).map((w, i) => (
+            <WorkCard key={w.slug} work={w} locale={locale} index={i} />
           ))}
         </div>
         <div className="mt-10">
