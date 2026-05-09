@@ -33,9 +33,14 @@ export const PATHS = {
   cookies: "legal/cookies",
 } as const;
 
-export function localePath(locale: Locale, path: keyof typeof PATHS): string {
+export function localePath(
+  locale: Locale,
+  path: keyof typeof PATHS,
+  basePath = ""
+): string {
   const segment = PATHS[path];
-  return segment ? `/${locale}/${segment}` : `/${locale}`;
+  const prefix = basePath ? basePath : "";
+  return segment ? `${prefix}/${locale}/${segment}` : `${prefix}/${locale}`;
 }
 
 export { LOCALES, DEFAULT_LOCALE };

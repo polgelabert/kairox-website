@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 /tmp/gen-placeholders.py)",
+      "Bash(npm run *)",
+      "Bash(npm test *)"
+    ]
+  }
+}

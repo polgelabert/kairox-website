@@ -1,13 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Container } from "./ui/Container";
-import { VersionSwitch } from "./VersionSwitch";
-import { localePath, getDictionary } from "@/lib/i18n";
+import { Container } from "@/components/ui/Container";
+import { localePathV2, getDictionaryV2 } from "@/lib/v2/i18n";
+import { VersionSwitch } from "@/components/VersionSwitch";
 import type { Locale } from "@/content/types";
 
-export function Footer({ locale }: { locale: Locale }) {
-  const d = getDictionary(locale);
+export function FooterV2({ locale }: { locale: Locale }) {
+  const d = getDictionaryV2(locale);
   const year = new Date().getFullYear();
+
+  // v2 footer links to v1 legal pages — same SL, same legal text.
+  const legalBase = `/${locale}/legal`;
 
   return (
     <footer className="border-t border-[var(--color-border)] mt-24 pt-16 pb-12 text-sm text-[var(--color-fg-muted)]">
@@ -26,10 +29,20 @@ export function Footer({ locale }: { locale: Locale }) {
               <span className="mono text-base font-semibold text-[var(--color-fg-strong)]">
                 kairox
               </span>
+              <span
+                className="mono text-[10px] uppercase tracking-[0.18em] px-1.5 py-0.5 rounded"
+                style={{
+                  color: "var(--kx-accent-bright)",
+                  border: "1px solid color-mix(in srgb, var(--kx-accent) 35%, transparent)",
+                }}
+              >
+                studio
+              </span>
             </div>
             <p className="max-w-xs">{d.footer.tagline}</p>
+
             <div className="mt-6">
-              <VersionSwitch direction="to-v2" label="Ver Kairox studio (v2) →" />
+              <VersionSwitch direction="to-v1" label={d.footer.versionSwitch} />
             </div>
           </div>
 
@@ -38,10 +51,10 @@ export function Footer({ locale }: { locale: Locale }) {
               {d.footer.nav}
             </div>
             <ul className="space-y-2">
-              <li><FooterLink href={localePath(locale, "services")}>{d.nav.services}</FooterLink></li>
-              <li><FooterLink href={localePath(locale, "work")}>{d.nav.work}</FooterLink></li>
-              <li><FooterLink href={localePath(locale, "about")}>{d.nav.about}</FooterLink></li>
-              <li><FooterLink href={localePath(locale, "contact")}>{d.nav.contact}</FooterLink></li>
+              <li><FooterLink href={localePathV2(locale, "services")}>{d.nav.services}</FooterLink></li>
+              <li><FooterLink href={localePathV2(locale, "sectors")}>{d.nav.sectors}</FooterLink></li>
+              <li><FooterLink href={localePathV2(locale, "process")}>{d.nav.process}</FooterLink></li>
+              <li><FooterLink href={localePathV2(locale, "contact")}>{d.nav.contact}</FooterLink></li>
             </ul>
           </div>
 
@@ -50,9 +63,9 @@ export function Footer({ locale }: { locale: Locale }) {
               {d.footer.legal}
             </div>
             <ul className="space-y-2">
-              <li><FooterLink href={localePath(locale, "avisoLegal")}>{d.footer.avisoLegal}</FooterLink></li>
-              <li><FooterLink href={localePath(locale, "privacidad")}>{d.footer.privacidad}</FooterLink></li>
-              <li><FooterLink href={localePath(locale, "cookies")}>{d.footer.cookies}</FooterLink></li>
+              <li><FooterLink href={`${legalBase}/aviso-legal`}>{d.footer.avisoLegal}</FooterLink></li>
+              <li><FooterLink href={`${legalBase}/privacidad`}>{d.footer.privacidad}</FooterLink></li>
+              <li><FooterLink href={`${legalBase}/cookies`}>{d.footer.cookies}</FooterLink></li>
             </ul>
           </div>
         </div>
@@ -63,8 +76,12 @@ export function Footer({ locale }: { locale: Locale }) {
         >
           <div>
             © {year} Kairox · CIF B25903097
-            <span className="hidden sm:inline"> · Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)</span>
-            <span className="block sm:hidden">Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)</span>
+            <span className="hidden sm:inline">
+              {" "}· Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)
+            </span>
+            <span className="block sm:hidden">
+              Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)
+            </span>
           </div>
           <div>{d.footer.rights}</div>
         </div>
@@ -75,10 +92,7 @@ export function Footer({ locale }: { locale: Locale }) {
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link
-      href={href}
-      className="hover:text-[var(--color-fg-strong)] transition-colors"
-    >
+    <Link href={href} className="hover:text-[var(--color-fg-strong)] transition-colors">
       {children}
     </Link>
   );

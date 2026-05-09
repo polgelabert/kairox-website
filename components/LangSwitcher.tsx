@@ -5,11 +5,25 @@ import { usePathname } from "next/navigation";
 import { LOCALES } from "@/lib/i18n";
 import type { Locale } from "@/content/types";
 
-// Replaces the current locale prefix with `target` so /es/servicios → /en/servicios.
+// Replaces the current locale prefix with `target`.
+// Handles both v1 paths (/es/servicios) and v2 paths (/v2/es/servicios).
 export function buildLocaleHref(pathname: string | null, target: Locale): string {
   if (!pathname) return `/${target}`;
   const parts = pathname.split("/").filter(Boolean);
   if (parts.length === 0) return `/${target}`;
+
+  // v2 prefix: skip and operate on the next segment
+  if (parts[0] === "v2") {
+    if (parts.length === 1) return `/v2/${target}`;
+    if ((LOCALES as readonly string[]).includes(parts[1])) {
+      parts[1] = target;
+    } else {
+      parts.splice(1, 0, target);
+    }
+    return "/" + parts.join("/");
+  }
+
+  // v1
   if ((LOCALES as readonly string[]).includes(parts[0])) {
     parts[0] = target;
   } else {

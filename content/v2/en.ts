@@ -1,0 +1,162 @@
+import type { V2Dictionary } from "./types";
+
+export const v2en: V2Dictionary = {
+  meta: {
+    title: "Kairox — AI advertising production for brands",
+    description:
+      "We generate image, video and social-feed content at the speed and cost of AI. For brands that can't afford to wait four weeks for a single spot.",
+  },
+  nav: {
+    services: "Services",
+    sectors: "Sectors",
+    process: "Process",
+    contact: "Contact",
+    cta: "Let's talk",
+  },
+  hero: {
+    eyebrow: "studio · production · ai",
+    headline: "Your next campaign, ",
+    headlineTail: "without the production house.",
+    subhead:
+      "We generate image, video and social-feed content with AI — at a fraction of the cost of a traditional production house and in days, not weeks. For brands that need to iterate fast and show up everywhere at once.",
+    cta: "Let's talk",
+    secondaryCta: "See services",
+    badges: ["Image", "Video", "Daily reels", "DTC · Ecommerce"],
+  },
+  studioVisual: {
+    app: "kairox · studio render queue",
+    live: "rendering",
+    queueLabel: "render queue",
+    variantLabel: "variants",
+    statusReady: "ready",
+    statusRendering: "rendering",
+    statusQueued: "queued",
+  },
+  servicesSection: {
+    eyebrow: "what we produce",
+    title:
+      "Three lines, one goal: that your brand has the content it needs, when it needs it.",
+    body: "We've productized what used to be a custom project with a closed budget. You tell us what you need; we deliver.",
+    seeAll: "See all services",
+    pricingNote: "Custom quote based on brand, volume and exclusivity.",
+  },
+  services: [
+    {
+      slug: "imagenes",
+      name: "Image packs by product",
+      short: "Catalog, lifestyle and campaign — generated on top of your product, ready for web, ecommerce and social.",
+      description:
+        "Custom static images: catalog variants, lifestyle scenes, camera angles, backgrounds and compositions. Delivered in the formats you need (square, vertical, horizontal, banner). Built for DTC brands that constantly refresh their creative.",
+      unit: "by number of products",
+      sampleAlt: "Image samples generated for different products",
+      tiers: [
+        { slug: "1-producto", label: "1 product", headline: "Minimum setup, ideal for a first test", description: "A single product, several scenes and formats.", bullets: ["Up to 20 variants per product", "3 scenarios (catalog, lifestyle, campaign)", "Formats: square, vertical, horizontal", "Delivery in 5 working days"] },
+        { slug: "2-productos", label: "2 products", headline: "For brands launching in pairs", description: "Two visually coordinated products.", bullets: ["Up to 20 variants per product", "Visual coherence between both products", "Extended formats for multi-channel campaigns", "Delivery in 7 working days"] },
+        { slug: "3-productos", label: "3 products", headline: "For collections and full launches", description: "Three products as one coherent collection.", bullets: ["Up to 20 variants per product", "Hero shots + group scenes", "Channel-specific variants", "Delivery in 10 working days"] },
+      ],
+    },
+    {
+      slug: "video",
+      name: "Video packs by length",
+      short: "From a 5-second story to a 60-second spot. Same process, different format.",
+      description:
+        "Video generated or produced with AI — with your product, your brand, your message. We cover everything from social stories and reels to web spots, presentations and paid campaigns.",
+      unit: "by length",
+      sampleAlt: "Frame samples from generated videos",
+      tiers: [
+        { slug: "5s", label: "5 seconds", headline: "Stories and bumpers", description: "Short piece for stories, pre-roll, transitions.", bullets: ["Up to 5 variants", "Vertical and square", "Delivery in 3 days"] },
+        { slug: "15s", label: "10–15 seconds", headline: "Reels and feed posts", description: "Dominant format on TikTok, IG, Reels.", bullets: ["Up to 4 variants", "Optimized per platform", "Delivery in 4 days"] },
+        { slug: "30s", label: "20–30 seconds", headline: "Short spots for social and web", description: "For paid campaigns and web home.", bullets: ["Up to 3 variants with different focus", "Voice-over and subtitles optional", "Delivery in 6 days"] },
+        { slug: "60s", label: "60 seconds", headline: "Full spots", description: "Narrative-driven piece for campaigns.", bullets: ["Up to 2 variants", "Storyboard, voice-over, music", "Delivery in 10 days"] },
+        { slug: "120s", label: "1–2 minutes", headline: "Branded content", description: "Long-form piece for web, presentations, corporate video.", bullets: ["Storyboard + worked-out script", "Multiple scenes and voice-over", "Delivery in 14 days"] },
+      ],
+    },
+    {
+      slug: "suscripcion",
+      name: "Content subscription for social",
+      short: "A constant flow of daily reels ready to publish. No gaps in your editorial calendar.",
+      description:
+        "Continuous content to keep your brand present on social without an in-house team having to produce it. Native per-platform adaptation — one concept, variants for Instagram, TikTok, Facebook and X.",
+      unit: "per month",
+      sampleAlt: "Reel samples published on social media",
+      tiers: [
+        { slug: "1-reel", label: "1 reel daily", headline: "Constant presence", description: "One reel every working day, ready to publish.", bullets: ["20–22 reels per month", "Adapted to IG, TikTok, FB, X", "Monthly editorial calendar", "Monthly iteration on performance"] },
+        { slug: "2-reels", label: "2 reels daily", headline: "For brands with high publishing appetite", description: "Double cadence to feed multiple platforms.", bullets: ["40–44 reels per month", "Channel-specific variants", "Monthly performance report", "Co-built editorial line"] },
+        { slug: "3-reels", label: "3 reels daily", headline: "For always-on brands", description: "Triple cadence with continuous A/B.", bullets: ["60–66 reels per month", "A/B on formats and messages", "Weekly reporting", "Quarterly content roadmap"] },
+      ],
+    },
+  ],
+  sectorsSection: {
+    eyebrow: "for whom",
+    title: "Brands that need speed and volume without losing quality.",
+    body: "We work especially well with DTC and ecommerce brands that constantly refresh their creative. If your traditional production costs four weeks and five thousand euros per spot, let's talk.",
+    seeAll: "See all sectors",
+  },
+  sectors: [
+    { slug: "puericultura", name: "Baby & kids", short: "Physical product with short campaign shelf-life and high creative rotation.", description: "Brands like the ones at any sector trade show — Jané, Asalvo, Babyauto, Olmitos, Lorena Canals — need to refresh content for every launch and every channel. We use your real product as reference and generate the scenes you need.", uses: ["Catalog and lifestyle imagery per SKU", "Daily reels for Instagram and TikTok", "15–30s spots for seasonal campaigns"], imageAlt: "Baby product in a lifestyle scene" },
+    { slug: "cosmetica", name: "Cosmetics & personal care", short: "Frequent launches, packaging that matters, an active community on social.", description: "Brands like Freshly Cosmetics, ISDIN or any DTC cosmetic brand live off launches and constant presence. We generate packshots, product video, application reels and seasonal campaigns.", uses: ["Packshots and still life per product", "Application / texture video", "Reel calendar for launches"], imageAlt: "Cosmetic product still life with natural light" },
+    { slug: "moda", name: "Fashion & accessories", short: "Seasonal collections, coherent look-and-feel, lots of content for many channels.", description: "Brands like Singularu, Gocco or any DTC fashion brand need to generate content at collection speed. We work on your real garments to keep product fidelity.", uses: ["Look-books generated per collection", "Variants per model and per channel", "Short editorial video"], imageAlt: "Fashion piece photographed in studio" },
+    { slug: "hogar", name: "Home & decor", short: "Product that needs to be seen in context. Lots of scene and ambience variety.", description: "For home, decor and furniture brands, lifestyle imagery sells more than the packshot. We generate product scenes in different ambiences — modern, Mediterranean, Nordic — without having to set up a shoot.", uses: ["Lifestyle by ambience", "Seasonal variants (Christmas, spring)", "Use and inspiration reels"], imageAlt: "Home product in a living room scene" },
+    { slug: "dtc-ecommerce", name: "DTC & ecommerce", short: "Constant volume, capped budget, clear conversion KPIs.", description: "If you sell online and your engine is creative, you need to iterate continuously. We give you a regular flow of image, video and reel — and integrate with your performance team to feed paid campaigns with fresh material.", uses: ["Creative for Meta Ads and TikTok Ads", "A/B variants on the same product", "Daily organic reels and posts"], imageAlt: "DTC brand in their online store" },
+    { slug: "servicios", name: "Service brands", short: "No physical product — creative leans on concept and storytelling.", description: "For service brands (B2B, SaaS, consulting, health, education), the piece isn't the product: it's the idea. We generate conceptual content, human scenes, animated graphics and explainer video.", uses: ["Product / service explainer video", "Conceptual editorial reels", "Imagery for landing and campaigns"], imageAlt: "Modern office scene with people working" },
+  ],
+  comparisonSection: {
+    eyebrow: "why us",
+    title: "The same as a production house — without what makes it take four weeks.",
+    body: "We're not against the craft of cinema or advertising. We're against the cost and time most brands can't afford month after month.",
+    leftLabel: "Traditional production",
+    rightLabel: "Production with Kairox",
+    rows: [
+      { metric: "Average time per spot", traditional: "3–6 weeks", kairox: "3–10 days", delta: "10× faster" },
+      { metric: "Cost per 15s spot", traditional: "€3,000 – €8,000", kairox: "€200 – €500", delta: "Up to 15× less cost" },
+      { metric: "Variants per concept", traditional: "1 final", kairox: "5–8 variants", delta: "More material for A/B" },
+      { metric: "Iterations after review", traditional: "1–2 limited", kairox: "As many as you need", delta: "No hidden overruns" },
+      { metric: "Creative rotation", traditional: "Quarterly", kairox: "Weekly or daily", delta: "For always-on campaigns" },
+    ],
+  },
+  processSection: {
+    eyebrow: "how we work",
+    title: "Five steps. No four-hour meetings. No surprise budget changes.",
+    body: "Designed so your marketing team receives content without having to become producers.",
+    steps: [
+      { label: "01", title: "Brief", body: "Product, brand, angles, tone. We close scope in a 30-minute call.", detail: "We need to understand your product, your claims, your visual identity and the commercial angles you want to explore. If you have a brand kit, campaign brief or visual references, even better — but not blocking." },
+      { label: "02", title: "Generation", body: "We generate the first variants in 48–72 hours. You review them in a private gallery.", detail: "We work in parallel with several models and techniques. Each concept comes out in multiple variants for comparison. Access to a private gallery where you mark which to iterate and which to discard." },
+      { label: "03", title: "Review", body: "We iterate on your feedback. No retouch limit within scope.", detail: "Each iteration lowers entropy: from 'I like this direction but cleaner' to 'this is it'. We don't charge extra for reasonable iterations — it's included in scope." },
+      { label: "04", title: "Delivery", body: "We deliver in the formats you need — square, vertical, horizontal, banner — ready to publish.", detail: "Each piece is delivered in the formats your marketing team needs: social (square, vertical), web (banner, hero), ads (square and vertical), email (horizontal). Clear naming, folder organization, all downloadable." },
+      { label: "05", title: "Iteration", body: "For subscriptions: we review performance month to month and adjust the content roadmap.", detail: "On monthly subscription contracts, we evaluate which pieces are working (impressions, engagement, CTR if we measure together) and orient the next batch toward angles that are getting results." },
+    ],
+    needs: { title: "What we need from you", items: ["Your product (physical or clear references)", "Brand kit or style guide (if you have one)", "A point of contact who can decide and give feedback", "Access to your channels to understand tone and audience (optional)"] },
+  },
+  finalCta: {
+    title: "Does your next campaign start now?",
+    body: "Tell us what brand you run and what you need. We reply within 24 hours with a concrete proposal.",
+    cta: "Let's talk",
+  },
+  contact: {
+    eyebrow: "contact",
+    title: "Tell us about your brand and your next campaign.",
+    body: "We answer within 24 working hours with a concrete proposal and a realistic timeline.",
+    formName: "Name",
+    formCompany: "Brand / company",
+    formEmail: "Email",
+    formMessage: "Tell us what kind of content you need",
+    formConsent: "I have read and accept the {privacy}. I consent to Kairox processing my data to respond to this enquiry.",
+    formConsentRequired: "You must accept the privacy policy.",
+    formSubmit: "Send",
+    formSubmitting: "Sending…",
+    formSuccess: "Message received. We'll reply within 24 hours.",
+    formError: "Something went wrong. Email us directly at {email}.",
+    emailLabel: "Email us directly",
+    privacyLink: "privacy policy",
+  },
+  footer: {
+    tagline: "AI advertising production for brands that can't wait.",
+    nav: "Navigation",
+    legal: "Legal",
+    avisoLegal: "Legal notice",
+    privacidad: "Privacy",
+    cookies: "Cookies",
+    rights: "All rights reserved.",
+    versionSwitch: "← See Kairox v1 (back office)",
+  },
+};

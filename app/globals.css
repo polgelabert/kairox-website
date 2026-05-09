@@ -17,6 +17,21 @@
   --font-mono: var(--font-jetbrains-mono);
 }
 
+/* v2 theme: scoped under .theme-v2 — same dark base, warm amber accent */
+.theme-v2 {
+  --kx-accent: #fb923c;
+  --kx-accent-bright: #fbbf24;
+  --kx-accent-deep: #c2410c;
+  --kx-accent-soft: rgba(251, 146, 60, 0.12);
+}
+
+.kx-grad-text {
+  background: linear-gradient(95deg, #fbbf24 0%, #fb923c 45%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 html {
   background: #0a0a0a;
   color: #e5e5e5;
