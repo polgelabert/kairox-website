@@ -45,8 +45,12 @@ export function MobileNav({ locale }: { locale: Locale }) {
 
       {open ? (
         <div
-          className="fixed inset-0 z-50 md:hidden bg-[var(--color-bg)]/98 backdrop-blur-md flex flex-col"
-          style={{ paddingTop: "env(safe-area-inset-top)", paddingBottom: "env(safe-area-inset-bottom)" }}
+          className="fixed inset-0 z-50 md:hidden flex flex-col"
+          style={{
+            background: "#0a0a0a",
+            paddingTop: "env(safe-area-inset-top)",
+            paddingBottom: "env(safe-area-inset-bottom)",
+          }}
         >
           <div className="flex items-center justify-between h-16 px-6">
             <Link
