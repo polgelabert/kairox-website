@@ -1,4 +1,6 @@
 import { WorkCase } from "@/content/types";
+import { CaseConsole } from "./CaseConsole";
+import { SafeBoundary } from "./SafeBoundary";
 
 const labelKeys: Record<string, Record<string, string>> = {
   es: { problem: "Problema", built: "Lo que construimos", scope: "Alcance", stack: "Stack" },
@@ -17,10 +19,12 @@ export function WorkCard({
   work,
   locale,
   index = 0,
+  withConsole = false,
 }: {
   work: WorkCase;
   locale: keyof typeof labelKeys;
   index?: number;
+  withConsole?: boolean;
 }) {
   const labels = labelKeys[locale] ?? labelKeys.es;
   const t = themes[index % themes.length];
@@ -83,6 +87,12 @@ export function WorkCard({
             </dd>
           </div>
         </dl>
+
+        {withConsole ? (
+          <SafeBoundary>
+            <CaseConsole index={index} accent={t.accent} />
+          </SafeBoundary>
+        ) : null}
 
         <div className="mt-6 pt-5 border-t border-[var(--color-border)]">
           <div className="mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)] mb-2">

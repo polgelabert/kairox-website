@@ -39,7 +39,7 @@ export function MobileNav({ locale }: { locale: Locale }) {
         className="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 text-[var(--color-fg-strong)]"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       </button>
 
@@ -73,7 +73,7 @@ export function MobileNav({ locale }: { locale: Locale }) {
               className="inline-flex items-center justify-center w-11 h-11 -mr-2 text-[var(--color-fg-strong)]"
             >
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M5 5l10 10M15 5l-10 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M5 5l10 10M15 5l-10 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </button>
           </div>

@@ -11,7 +11,7 @@ export function Header({ locale }: { locale: Locale }) {
   const d = getDictionary(locale);
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-[var(--color-bg)]/70 border-b border-[var(--color-border)]">
+    <header className="sticky top-0 z-40 backdrop-blur-md bg-[var(--color-bg)]/95 md:bg-[var(--color-bg)]/75 border-b border-[var(--color-border-strong)] md:border-[var(--color-border)]">
       <Container className="flex items-center justify-between h-16">
         <Link
           href={localePath(locale, "home")}

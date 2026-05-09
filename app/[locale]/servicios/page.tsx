@@ -41,7 +41,7 @@ export default async function ServicesPage({
       </Section>
 
       <Section>
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
           {d.services.map((s, i) => (
             <ServiceCard key={s.slug} service={s} index={i} full />
           ))}

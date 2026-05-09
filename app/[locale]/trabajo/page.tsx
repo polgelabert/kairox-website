@@ -41,9 +41,9 @@ export default async function WorkPage({
       </Section>
 
       <Section>
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
           {d.work.map((w, i) => (
-            <WorkCard key={w.slug} work={w} locale={locale} index={i} />
+            <WorkCard key={w.slug} work={w} locale={locale} index={i} withConsole />
           ))}
         </div>
       </Section>
