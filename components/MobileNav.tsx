@@ -11,14 +11,32 @@ export function MobileNav({ locale }: { locale: Locale }) {
   const d = getDictionary(locale);
   const [open, setOpen] = useState(false);
 
+  // iOS Safari ignores body { overflow: hidden } — also lock html and
+  // pin scroll position so the page underneath can't bleed visually.
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    if (!open) return;
+    const scrollY = window.scrollY;
+    const html = document.documentElement;
+    const body = document.body;
+    const prev = {
+      htmlOverflow: html.style.overflow,
+      bodyOverflow: body.style.overflow,
+      bodyPosition: body.style.position,
+      bodyTop: body.style.top,
+      bodyWidth: body.style.width,
+    };
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
     return () => {
-      document.body.style.overflow = "";
+      html.style.overflow = prev.htmlOverflow;
+      body.style.overflow = prev.bodyOverflow;
+      body.style.position = prev.bodyPosition;
+      body.style.top = prev.bodyTop;
+      body.style.width = prev.bodyWidth;
+      window.scrollTo(0, scrollY);
     };
   }, [open]);
 
@@ -45,11 +63,21 @@ export function MobileNav({ locale }: { locale: Locale }) {
 
       {open ? (
         <div
-          className="fixed inset-0 z-50 md:hidden flex flex-col"
+          className="md:hidden flex flex-col"
           style={{
-            background: "#0a0a0a",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: "100vw",
+            height: "100dvh",
+            zIndex: 9999,
+            backgroundColor: "#0a0a0a",
             paddingTop: "env(safe-area-inset-top)",
             paddingBottom: "env(safe-area-inset-bottom)",
+            overflowY: "auto",
+            WebkitOverflowScrolling: "touch",
           }}
         >
           <div className="flex items-center justify-between h-16 px-6">
