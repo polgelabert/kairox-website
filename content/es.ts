@@ -51,6 +51,7 @@ export const es: Dictionary = {
     {
       slug: "analytics-conversacional",
       name: "Analytics y monitorización conversacional",
+      tag: "analítica",
       short:
         "Dashboards en tiempo real para equipos que mueven miles de conversaciones al día.",
       description:
@@ -66,6 +67,7 @@ export const es: Dictionary = {
     {
       slug: "operaciones-sociales",
       name: "Sistemas de operaciones sociales multi-plataforma",
+      tag: "ops",
       short:
         "Un command center unificado para gestionar Meta, Reddit, TikTok y X desde un solo sitio.",
       description:
@@ -81,6 +83,7 @@ export const es: Dictionary = {
     {
       slug: "infraestructura-telegram",
       name: "Infraestructura de Telegram y mensajería",
+      tag: "telegram",
       short:
         "Bots, canales, broadcast y monetización a nivel producción. Nada de pegamento no-code.",
       description:
@@ -94,8 +97,9 @@ export const es: Dictionary = {
       ],
     },
     {
-      slug: "integraciones-bespoke",
-      name: "Integraciones a medida y desarrollos bespoke",
+      slug: "integraciones-a-medida",
+      name: "Integraciones y desarrollos a medida",
+      tag: "a medida",
       short:
         "Cuando lo de la estantería no encaja, construimos el sistema que sí.",
       description:

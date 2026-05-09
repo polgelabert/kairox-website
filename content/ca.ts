@@ -52,6 +52,7 @@ export const ca: Dictionary = {
     {
       slug: "analytics-conversacional",
       name: "Analítica i monitorització conversacional",
+      tag: "analítica",
       short:
         "Dashboards en temps real per a equips que mouen milers de converses al dia.",
       description:
@@ -67,6 +68,7 @@ export const ca: Dictionary = {
     {
       slug: "operacions-socials",
       name: "Sistemes d'operacions socials multi-plataforma",
+      tag: "ops",
       short:
         "Un command center unificat per gestionar Meta, Reddit, TikTok i X des d'un sol lloc.",
       description:
@@ -82,6 +84,7 @@ export const ca: Dictionary = {
     {
       slug: "infraestructura-telegram",
       name: "Infraestructura de Telegram i missatgeria",
+      tag: "telegram",
       short:
         "Bots, canals, broadcast i monetització a nivell de producció. Res de pegament no-code.",
       description:
@@ -95,8 +98,9 @@ export const ca: Dictionary = {
       ],
     },
     {
-      slug: "integracions-bespoke",
-      name: "Integracions a mida i desenvolupaments bespoke",
+      slug: "integracions-a-mida",
+      name: "Integracions i desenvolupaments a mida",
+      tag: "a mida",
       short:
         "Quan el de prestatgeria no encaixa, construïm el sistema que sí.",
       description:

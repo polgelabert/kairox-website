@@ -1,39 +1,12 @@
 import { Service } from "@/content/types";
+import { ServiceVisual } from "./ServiceVisual";
 
-// Per-service accent + glyph + tiny inline mock visual.
-// Keyed by slug — works across all locales (slugs differ but each
-// locale's slugs map cleanly to one of these themes by index in the
-// array on the page, falling back via the byIndex helper below).
 const themes = [
-  {
-    accent: "#a78bfa",
-    accentSoft: "rgba(167,139,250,0.12)",
-    glyph: "▲",
-    tag: "analytics",
-    visual: "metric",
-  },
-  {
-    accent: "#7fd1de",
-    accentSoft: "rgba(127,209,222,0.12)",
-    glyph: "◆",
-    tag: "ops",
-    visual: "grid",
-  },
-  {
-    accent: "#60a5fa",
-    accentSoft: "rgba(96,165,250,0.12)",
-    glyph: "✦",
-    tag: "telegram",
-    visual: "bot",
-  },
-  {
-    accent: "#fbbf24",
-    accentSoft: "rgba(251,191,36,0.12)",
-    glyph: "❯",
-    tag: "bespoke",
-    visual: "code",
-  },
-] as const;
+  { accent: "#a78bfa", glyph: "▲", visual: "metric" as const },
+  { accent: "#7fd1de", glyph: "◆", visual: "grid" as const },
+  { accent: "#60a5fa", glyph: "✦", visual: "bot" as const },
+  { accent: "#fbbf24", glyph: "❯", visual: "code" as const },
+];
 
 export function ServiceCard({
   service,
@@ -47,10 +20,7 @@ export function ServiceCard({
   const t = themes[index % themes.length];
 
   return (
-    <article
-      className="group relative p-7 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-raised)] hover:border-[var(--color-border-strong)] transition-colors overflow-hidden"
-      style={{ "--svc-accent": t.accent, "--svc-soft": t.accentSoft } as React.CSSProperties}
-    >
+    <article className="group relative p-7 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-raised)] hover:border-[var(--color-border-strong)] transition-colors overflow-hidden">
       <div
         className="absolute inset-x-0 top-0 h-px opacity-60"
         style={{
@@ -67,12 +37,9 @@ export function ServiceCard({
           className="mono text-xs uppercase tracking-[0.18em]"
           style={{ color: t.accent }}
         >
-          {String(index + 1).padStart(2, "0")} · {t.tag}
+          {String(index + 1).padStart(2, "0")} · {service.tag}
         </span>
-        <span
-          className="mono text-base"
-          style={{ color: t.accent }}
-        >
+        <span className="mono text-base" style={{ color: t.accent }}>
           {t.glyph}
         </span>
       </div>
@@ -83,6 +50,10 @@ export function ServiceCard({
       <p className="mt-3 text-[var(--color-fg-muted)] leading-relaxed">
         {full ? service.description : service.short}
       </p>
+
+      <div className="relative mt-6">
+        <ServiceVisual kind={t.visual} accent={t.accent} />
+      </div>
 
       {full ? (
         <ul className="mt-6 space-y-2">
@@ -98,88 +69,7 @@ export function ServiceCard({
             </li>
           ))}
         </ul>
-      ) : (
-        <div className="mt-6">
-          <ServiceVisual kind={t.visual} accent={t.accent} />
-        </div>
-      )}
+      ) : null}
     </article>
-  );
-}
-
-function ServiceVisual({
-  kind,
-  accent,
-}: {
-  kind: string;
-  accent: string;
-}) {
-  if (kind === "metric") {
-    return (
-      <div className="flex gap-2">
-        {[
-          { l: "p50", v: "42s" },
-          { l: "vol", v: "1.2k" },
-          { l: "csat", v: "4.8" },
-        ].map((m) => (
-          <div
-            key={m.l}
-            className="flex-1 rounded border border-[var(--color-border)] bg-[var(--color-bg)] px-2.5 py-2"
-          >
-            <div className="mono text-[9px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)]">
-              {m.l}
-            </div>
-            <div
-              className="mono text-sm font-semibold mt-0.5"
-              style={{ color: accent }}
-            >
-              {m.v}
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  }
-  if (kind === "grid") {
-    return (
-      <div className="flex flex-wrap gap-1.5">
-        {["IG", "FB", "Reddit", "TikTok", "X"].map((p) => (
-          <span
-            key={p}
-            className="mono text-[10px] px-2 py-1 rounded border border-[var(--color-border)] text-[var(--color-fg-muted)]"
-            style={{ borderColor: `${accent}33`, color: accent }}
-          >
-            {p}
-          </span>
-        ))}
-      </div>
-    );
-  }
-  if (kind === "bot") {
-    return (
-      <div className="rounded border border-[var(--color-border)] bg-[var(--color-bg)] p-2.5 mono text-[11px] space-y-1">
-        <div className="flex items-center gap-2">
-          <span style={{ color: accent }}>›</span>
-          <span className="text-[var(--color-fg-muted)]">/start</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span style={{ color: accent }}>‹</span>
-          <span className="text-[var(--color-fg)]">welcome · 12,481 subs</span>
-        </div>
-      </div>
-    );
-  }
-  // code
-  return (
-    <div className="rounded border border-[var(--color-border)] bg-[var(--color-bg)] p-2.5 mono text-[11px]">
-      <div>
-        <span className="text-[var(--color-fg-subtle)]">$ </span>
-        <span style={{ color: accent }}>kairox</span>
-        <span className="text-[var(--color-fg-muted)]"> deploy --env=prod</span>
-      </div>
-      <div className="text-[var(--color-fg-subtle)]">
-        ✓ 14 services healthy
-      </div>
-    </div>
   );
 }

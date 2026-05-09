@@ -6,6 +6,7 @@ export const DEFAULT_LOCALE: Locale = "es";
 export type Service = {
   slug: string;
   name: string;
+  tag: string;
   short: string;
   description: string;
   bullets: string[];

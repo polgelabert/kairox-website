@@ -8,37 +8,41 @@ type FeedItem = { who: string; msg: string; t: string };
 
 export function HeroVisual({ d }: { d: Dictionary["heroVisual"] }) {
   const [counts, setCounts] = useState<Channel[]>([
-    { l: "WhatsApp", c: 248, active: true },
-    { l: "Telegram", c: 92 },
-    { l: "Instagram", c: 67 },
-    { l: "Reddit", c: 18 },
-    { l: "TikTok", c: 9 },
+    { l: "WhatsApp", c: 12, active: true },
+    { l: "Telegram", c: 7 },
+    { l: "Instagram", c: 4 },
+    { l: "Reddit", c: 2 },
+    { l: "TikTok", c: 0 },
   ]);
   const [feed, setFeed] = useState<FeedItem[]>(d.feed);
-  const [respMs, setRespMs] = useState(42);
-  const [openCount, setOpenCount] = useState(1284);
-  const [volTrend, setVolTrend] = useState(18);
+  const [respMs, setRespMs] = useState(38);
+  const [openCount, setOpenCount] = useState(43);
+  const [volTrend, setVolTrend] = useState(12);
   const [tick, setTick] = useState(0);
 
-  // Tick channel counters and KPIs every 2.6s
+  // Fast cadence: every 1.1s. Each tick visibly bumps numbers.
   useEffect(() => {
     const id = setInterval(() => {
       setCounts((c) =>
-        c.map((ch) => ({ ...ch, c: ch.c + Math.floor(Math.random() * 4) }))
+        c.map((ch, i) => ({
+          ...ch,
+          // WhatsApp grows fastest, then a falloff per channel
+          c: ch.c + (Math.random() < 0.7 ? 1 + Math.floor(Math.random() * (4 - i * 0.6)) : 0),
+        }))
       );
       setRespMs((v) =>
-        Math.max(28, Math.min(58, v + (Math.random() < 0.5 ? -1 : 1) * (1 + Math.floor(Math.random() * 3))))
+        Math.max(24, Math.min(72, v + (Math.random() < 0.5 ? -1 : 1) * (1 + Math.floor(Math.random() * 3))))
       );
-      setOpenCount((v) => v + Math.floor(Math.random() * 6) - 1);
+      setOpenCount((v) => Math.max(0, v + Math.floor(Math.random() * 4) - 1));
       setVolTrend((v) =>
-        Math.max(4, Math.min(34, v + (Math.random() < 0.5 ? -1 : 1) * (1 + Math.floor(Math.random() * 2))))
+        Math.max(4, Math.min(48, v + (Math.random() < 0.5 ? -1 : 1) * (1 + Math.floor(Math.random() * 3))))
       );
       setTick((t) => t + 1);
-    }, 2600);
+    }, 1100);
     return () => clearInterval(id);
   }, []);
 
-  // Rotate feed every 3.4s — push new at top, drop oldest
+  // Rotate feed every 2s — push new at top, drop oldest
   useEffect(() => {
     let i = 0;
     const id = setInterval(() => {
@@ -47,7 +51,7 @@ export function HeroVisual({ d }: { d: Dictionary["heroVisual"] }) {
         i++;
         return [next, ...current].slice(0, 3);
       });
-    }, 3400);
+    }, 2000);
     return () => clearInterval(id);
   }, [d.feedExtra]);
 

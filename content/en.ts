@@ -52,6 +52,7 @@ export const en: Dictionary = {
     {
       slug: "conversational-analytics",
       name: "Conversational analytics & monitoring",
+      tag: "analytics",
       short:
         "Real-time dashboards for teams handling thousands of conversations a day.",
       description:
@@ -67,6 +68,7 @@ export const en: Dictionary = {
     {
       slug: "social-operations",
       name: "Multi-platform social operations systems",
+      tag: "ops",
       short:
         "A unified command center for managing Meta, Reddit, TikTok and X from one place.",
       description:
@@ -82,6 +84,7 @@ export const en: Dictionary = {
     {
       slug: "telegram-infrastructure",
       name: "Telegram & messaging automation infrastructure",
+      tag: "telegram",
       short:
         "Bots, channels, broadcast and monetization at production grade. No no-code glue.",
       description:
@@ -97,6 +100,7 @@ export const en: Dictionary = {
     {
       slug: "bespoke-integrations",
       name: "Custom integrations & bespoke builds",
+      tag: "custom",
       short: "When the off-the-shelf doesn't fit, we build the system that does.",
       description:
         "When the off-the-shelf doesn't fit: CRM connections, ERP and accounting bridges, payment flows, content pipelines, AI integrations on top of existing systems. The line that catches the work that doesn't fit cleanly above.",
