@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./ui/Container";
 import { localePath, getDictionary } from "@/lib/i18n";
 import type { Locale } from "@/content/types";
@@ -12,8 +13,18 @@ export function Footer({ locale }: { locale: Locale }) {
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <div className="col-span-2">
-            <div className="mono text-base font-semibold text-[var(--color-fg-strong)] mb-3">
-              kairox
+            <div className="flex items-center gap-2.5 mb-4">
+              <Image
+                src="/kairox-mark.svg"
+                alt="Kairox"
+                width={28}
+                height={28}
+                className="h-7 w-7"
+                unoptimized
+              />
+              <span className="mono text-base font-semibold text-[var(--color-fg-strong)]">
+                kairox
+              </span>
             </div>
             <p className="max-w-xs">{d.footer.tagline}</p>
           </div>

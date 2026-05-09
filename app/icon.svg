@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-label="Kairox">
+  <defs>
+    <linearGradient id="kx-swoosh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a6e6f0" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#5fb6c8"/>
+      <stop offset="100%" stop-color="#2f7888"/>
+    </linearGradient>
+    <linearGradient id="kx-dots" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7fd1de"/>
+      <stop offset="100%" stop-color="#3aa0b8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer swoosh: ~3/4 arc with opening at top-left -->
+  <path
+    d="M 22 22 A 42 42 0 1 1 13 64"
+    stroke="url(#kx-swoosh)"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+
+  <!-- Three dots sweeping into the swoosh on the lower-left -->
+  <circle cx="19" cy="69" r="2.4" fill="url(#kx-dots)" opacity="0.85"/>
+  <circle cx="28" cy="75" r="3.2" fill="url(#kx-dots)" opacity="0.95"/>
+  <circle cx="39" cy="79" r="4"   fill="url(#kx-dots)"/>
+
+  <!-- The K letter, hand-pathed -->
+  <path
+    d="M 35 28 L 43 28 L 43 47 L 58 28 L 68 28 L 51 50 L 69 72 L 59 72 L 43 53 L 43 72 L 35 72 Z"
+    fill="#fafafa"
+  />
+</svg>

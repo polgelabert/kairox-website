@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./ui/Container";
 import { Button } from "./ui/Button";
 import { localePath, getDictionary, LOCALES } from "@/lib/i18n";
@@ -12,13 +13,19 @@ export function Header({ locale }: { locale: Locale }) {
       <Container className="flex items-center justify-between h-16">
         <Link
           href={localePath(locale, "home")}
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-2.5 group"
         >
+          <Image
+            src="/kairox-mark.svg"
+            alt="Kairox"
+            width={32}
+            height={32}
+            className="h-8 w-8"
+            priority
+            unoptimized
+          />
           <span className="mono text-base font-semibold tracking-tight text-[var(--color-fg-strong)]">
             kairox
-          </span>
-          <span className="mono text-xs text-[var(--color-accent)] opacity-70 group-hover:opacity-100 transition-opacity">
-            ◆
           </span>
         </Link>
 
