@@ -2,12 +2,6 @@ import { WorkCase } from "@/content/types";
 import { CaseConsole } from "./CaseConsole";
 import { SafeBoundary } from "./SafeBoundary";
 
-const labelKeys: Record<string, Record<string, string>> = {
-  es: { problem: "Problema", built: "Lo que construimos", scope: "Alcance", stack: "Stack" },
-  en: { problem: "Problem", built: "What we built", scope: "Scope", stack: "Stack" },
-  ca: { problem: "Problema", built: "El que vam construir", scope: "Abast", stack: "Stack" },
-};
-
 const themes = [
   { accent: "#a78bfa", tags: ["WhatsApp", "Telegram", "Postgres", "Grafana"] },
   { accent: "#7fd1de", tags: ["Meta API", "Reddit", "TikTok", "Next.js"] },
@@ -17,22 +11,19 @@ const themes = [
 
 export function WorkCard({
   work,
-  locale,
   index = 0,
   withConsole = false,
 }: {
   work: WorkCase;
-  locale: keyof typeof labelKeys;
+  // locale kept in the prop signature for backward compat, no longer rendered.
+  locale?: string;
   index?: number;
   withConsole?: boolean;
 }) {
-  const labels = labelKeys[locale] ?? labelKeys.es;
   const t = themes[index % themes.length];
 
   return (
-    <article
-      className="relative p-6 sm:p-8 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-raised)] overflow-hidden group hover:border-[var(--color-border-strong)] transition-colors"
-    >
+    <article className="relative p-6 sm:p-8 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-raised)] overflow-hidden group hover:border-[var(--color-border-strong)] transition-colors">
       <div
         className="absolute inset-x-0 top-0 h-px opacity-60"
         style={{
@@ -45,67 +36,20 @@ export function WorkCard({
       />
 
       <div className="relative">
-        <div className="flex items-center justify-between mb-4">
-          <span
-            className="mono text-xs uppercase tracking-[0.18em]"
-            style={{ color: t.accent }}
-          >
-            case · {String(index + 1).padStart(2, "0")}
-          </span>
-        </div>
+        <span
+          className="mono text-xs uppercase tracking-[0.18em]"
+          style={{ color: t.accent }}
+        >
+          case · {String(index + 1).padStart(2, "0")}
+        </span>
 
-        <h3 className="text-xl sm:text-2xl font-semibold text-[var(--color-fg-strong)] tracking-tight">
+        <h3 className="mt-4 text-xl sm:text-2xl font-semibold text-[var(--color-fg-strong)] tracking-tight text-balance">
           {work.title}
         </h3>
 
-        <p className="mt-4 text-[15px] leading-relaxed text-[var(--color-fg)]">
+        <p className="mt-4 text-[15px] leading-relaxed text-[var(--color-fg-muted)]">
           {work.story}
         </p>
-
-        <dl className="mt-6 space-y-5">
-          <div>
-            <dt className="mono text-xs uppercase tracking-[0.18em] text-[var(--color-fg-subtle)]">
-              {labels.problem}
-            </dt>
-            <dd className="mt-2 text-[var(--color-fg-muted)] leading-relaxed">
-              {work.problem}
-            </dd>
-          </div>
-          <div>
-            <dt
-              className="mono text-xs uppercase tracking-[0.18em]"
-              style={{ color: t.accent }}
-            >
-              {labels.built}
-            </dt>
-            <dd className="mt-2 text-[var(--color-fg)] leading-relaxed">
-              {work.built}
-            </dd>
-            {work.bullets && work.bullets.length > 0 ? (
-              <ul className="mt-3 space-y-1.5">
-                {work.bullets.map((b) => (
-                  <li
-                    key={b}
-                    className="flex gap-2.5 text-sm text-[var(--color-fg)] leading-relaxed"
-                  >
-                    <span className="mono mt-[2px]" style={{ color: t.accent }}>
-                      ›
-                    </span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-          </div>
-          <div>
-            <dt className="mono text-xs uppercase tracking-[0.18em] text-[var(--color-fg-subtle)]">
-              {labels.scope}
-            </dt>
-            <dd className="mt-2 mono text-sm text-[var(--color-fg-muted)]">
-              {work.scope}
-            </dd>
-          </div>
-        </dl>
 
         {withConsole ? (
           <SafeBoundary>
@@ -113,25 +57,20 @@ export function WorkCard({
           </SafeBoundary>
         ) : null}
 
-        <div className="mt-6 pt-5 border-t border-[var(--color-border)]">
-          <div className="mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)] mb-2">
-            {labels.stack}
-          </div>
-          <div className="flex flex-wrap gap-1.5">
-            {t.tags.map((tag) => (
-              <span
-                key={tag}
-                className="mono text-[10px] px-2 py-1 rounded"
-                style={{
-                  border: `1px solid ${t.accent}33`,
-                  color: t.accent,
-                  background: `${t.accent}0d`,
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+        <div className="mt-6 flex flex-wrap items-center gap-1.5">
+          {t.tags.map((tag) => (
+            <span
+              key={tag}
+              className="mono text-[10px] px-2 py-1 rounded"
+              style={{
+                border: `1px solid ${t.accent}33`,
+                color: t.accent,
+                background: `${t.accent}0d`,
+              }}
+            >
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
     </article>

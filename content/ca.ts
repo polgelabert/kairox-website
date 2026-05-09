@@ -125,7 +125,7 @@ export const ca: Dictionary = {
       slug: "suport-conversacional",
       title: "Centre d'operació per a un equip de suport conversacional",
       story:
-        "Els dilluns a primera hora la cua podia tenir 80 converses esperant. Abans: cada agent obria el primer que veia, els VIP es barrejaven amb consultes de 'gràcies', i a mig matí algú descobria un tiquet esperant des de divendres. Ara: la cua es prioritza automàticament per SLA i tipus de client, cada agent rep el que millor encaixa amb la seva skill, el supervisor veu la càrrega real a la seva pantalla, i si una conversa s'acosta a l'SLA l'alerta salta abans — no després.",
+        "Un equip de suport responia per WhatsApp i Telegram a l'atzar — VIP barrejats amb consultes de 'gràcies', tiquets antics oblidats, sense SLA visible. Vam construir la seva taula d'operació: cua prioritzada, assignació automàtica per càrrega i skill, alertes abans de l'incompliment.",
       problem:
         "Un equip de suport gestionant milers de converses diàries per WhatsApp, Telegram i Instagram. Sense enrutament: cada agent agafava converses a l'atzar. Sense SLA visible: l'única manera de saber si una conversa s'endarreria era llegir-la. Sense visibilitat de càrrega: el supervisor no sabia qui estava saturat i qui lliure. Resultat: clients VIP esperant, tiquets antics oblidats i sensació constant d'anar a remolc.",
       built:
@@ -146,7 +146,7 @@ export const ca: Dictionary = {
       slug: "ops-socials-multi-plataforma",
       title: "Command center social connectat al sistema intern",
       story:
-        "La marca utilitzava una eina de social media per publicar i un sistema intern separat per gestionar comandes. Cada vegada que arribava un DM o un comentari preguntant per una factura, un enviament o l'estat d'un compte, l'agent saltava entre tres pestanyes. Vam construir un command center sobre el seu núvol que llegeix directament del seu ERP: l'equip veu la comanda del client al costat del missatge i respon amb context amb un sol clic.",
+        "La marca pagava dues eines — una per publicar, una altra per a suport — i els agents continuaven saltant a un tercer sistema intern cada vegada que un DM preguntava per una comanda o una factura. Vam construir un command center sobre el seu núvol que llegeix directament de l'ERP: context del client al costat del missatge, sense salts.",
       problem:
         "Una marca amb presència a Instagram, Facebook, Reddit i TikTok pagava dues eines — una per publicar i una altra per a suport — i tot i així els agents havien de saltar a un tercer sistema intern cada vegada que un DM preguntava alguna cosa concreta. L'off-the-shelf no s'integra amb el seu backend.",
       built:

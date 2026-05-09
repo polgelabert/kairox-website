@@ -124,7 +124,7 @@ export const es: Dictionary = {
       slug: "soporte-conversacional",
       title: "Centro de operación para un equipo de soporte conversacional",
       story:
-        "Los lunes a primera hora la cola podía tener 80 conversaciones esperando. Antes: cada agente abría lo primero que veía, los VIP se mezclaban con consultas de 'gracias', y a media mañana alguien descubría un ticket esperando desde el viernes. Ahora: la cola se prioriza automáticamente por SLA y tipo de cliente, cada agente recibe lo que mejor encaja con su skill, el supervisor ve la carga real en su pantalla, y si una conversación se acerca al SLA la alerta salta antes — no después.",
+        "Un equipo de soporte respondía por WhatsApp y Telegram al azar — VIP mezclados con consultas de 'gracias', tickets antiguos olvidados, sin SLA visible. Construimos su mesa de operación: cola priorizada, asignación automática por carga y skill, alertas antes del incumplimiento.",
       problem:
         "Un equipo de soporte gestionando miles de conversaciones diarias por WhatsApp, Telegram e Instagram. Sin enrutado: cada agente cogía conversaciones al azar. Sin SLA visible: la única forma de saber si una conversación se estaba retrasando era leerla. Sin visibilidad de carga: el supervisor no sabía quién estaba saturado y quién libre. Resultado: clientes VIP esperando, tickets antiguos olvidados y sensación constante de ir a remolque.",
       built:
@@ -145,7 +145,7 @@ export const es: Dictionary = {
       slug: "ops-sociales-multi-plataforma",
       title: "Command center social conectado al sistema interno",
       story:
-        "La marca usaba una herramienta de social media para publicar y un sistema interno separado para gestionar pedidos. Cuando llegaba un DM o un comentario preguntando por una factura, un envío o el estado de una cuenta, el agente saltaba entre tres pestañas. Construimos un command center sobre su nube que lee directamente de su ERP: el equipo ve el pedido del cliente al lado del mensaje y responde con contexto en un click.",
+        "La marca pagaba dos herramientas — una para publicar, otra para soporte — y los agentes seguían saltando a un tercer sistema interno cada vez que un DM preguntaba por un pedido o una factura. Construimos un command center sobre su nube que lee directamente del ERP: contexto del cliente al lado del mensaje, sin saltos.",
       problem:
         "Una marca con presencia en Instagram, Facebook, Reddit y TikTok pagaba dos herramientas — una para publicar y otra para soporte — y aún así sus agentes saltaban a un tercer sistema interno cada vez que un DM preguntaba algo concreto. Lo off-the-shelf no se integra con su backend.",
       built:

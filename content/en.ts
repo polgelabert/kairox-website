@@ -124,7 +124,7 @@ export const en: Dictionary = {
       slug: "support-workspace",
       title: "Operations workspace for a conversational support team",
       story:
-        "Monday mornings the queue could carry 80 waiting conversations. Before: each agent opened whatever they saw first, VIPs got mixed with 'thanks!' replies, and by mid-morning someone would find a ticket that had been waiting since Friday. Now: the queue prioritizes itself by SLA and customer type, each agent gets what fits their skill, the supervisor sees real load on a single screen, and SLA alerts fire before — not after.",
+        "A support team was answering on WhatsApp and Telegram at random — VIPs mixed with 'thanks!' replies, old tickets forgotten, no visible SLA. We built their operations workspace: prioritized queue, automatic assignment by load and skill, alerts before the SLA breaks.",
       problem:
         "A support team handling thousands of daily conversations across WhatsApp, Telegram and Instagram. No routing — agents picked at random. No visible SLA — the only way to know a conversation was slipping was to read it. No load visibility — the supervisor couldn't tell who was overloaded vs. free. Result: VIP clients waiting, old tickets forgotten, the team always one step behind.",
       built:
@@ -145,7 +145,7 @@ export const en: Dictionary = {
       slug: "multi-platform-social-ops",
       title: "Social command center wired into the internal system",
       story:
-        "The brand used a social media tool for publishing and a separate internal system for orders. Every time a DM or comment asked about an invoice, a shipment, or an account status, the agent jumped between three tabs. We built a command center on their cloud that reads directly from their ERP: the team sees the customer's order next to the message and responds with context in one click.",
+        "The brand paid for two tools — one to publish, another for support — and agents still jumped to a third internal system every time a DM asked about an order or invoice. We built a command center on their cloud that reads directly from their ERP: customer context next to every message, no jumping.",
       problem:
         "A brand with active presence on Instagram, Facebook, Reddit and TikTok was paying for two tools — one to publish and another for support — and agents still had to jump to a third internal system every time a DM asked something concrete. Off-the-shelf tools don't integrate with their backend.",
       built:
