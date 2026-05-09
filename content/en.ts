@@ -124,11 +124,21 @@ export const en: Dictionary = {
       slug: "support-workspace",
       title: "Operations workspace for a conversational support team",
       story:
-        "A customer-support team was answering on WhatsApp and Telegram with no idea who was overloaded, which conversation had been open longest, or whether they were hitting their promised SLA. We built their operations workspace: prioritized queue, automatic assignment, real-time supervisor view, alerts before anything jams. The team now works with visibility — and the person on the other side of the chat feels it.",
+        "Monday mornings the queue could carry 80 waiting conversations. Before: each agent opened whatever they saw first, VIPs got mixed with 'thanks!' replies, and by mid-morning someone would find a ticket that had been waiting since Friday. Now: the queue prioritizes itself by SLA and customer type, each agent gets what fits their skill, the supervisor sees real load on a single screen, and SLA alerts fire before — not after.",
       problem:
-        "A support team handling thousands of daily conversations across WhatsApp, Telegram and Instagram with no routing, no visible SLA, and no idea which agent was at the limit.",
+        "A support team handling thousands of daily conversations across WhatsApp, Telegram and Instagram. No routing — agents picked at random. No visible SLA — the only way to know a conversation was slipping was to read it. No load visibility — the supervisor couldn't tell who was overloaded vs. free. Result: VIP clients waiting, old tickets forgotten, the team always one step behind.",
       built:
-        "Custom operations workspace: prioritized queue, automatic assignment by load and skill, per-conversation SLA, supervisor view with per-agent performance and alerts before a channel saturates.",
+        "A custom operations workspace with everything the team needed in one screen — prioritized queue, automatic assignment, customer profile alongside each conversation, real-time supervisor view, and metrics that actually drive decisions. On their own infrastructure, with no third parties touching customer data.",
+      bullets: [
+        "Queue prioritized by SLA, age and customer type",
+        "Automatic assignment by load, skill and language",
+        "Customer profile alongside each conversation: history, orders, NPS",
+        "Versioned response templates with variables",
+        "Supervisor view: per-agent load, SLA risk, per-channel distribution",
+        "Alerts before SLA breach, not after",
+        "Escalation to second line or specific teams (billing, returns)",
+        "Real metrics: CSAT, p50/p95, per-channel volume, per-agent productivity",
+      ],
       scope: "Discovery + design + build + handover. Monthly maintenance.",
     },
     {

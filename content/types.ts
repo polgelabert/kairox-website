@@ -18,6 +18,7 @@ export type WorkCase = {
   story: string;
   problem: string;
   built: string;
+  bullets?: string[];
   scope: string;
 };
 

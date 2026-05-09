@@ -125,11 +125,21 @@ export const ca: Dictionary = {
       slug: "suport-conversacional",
       title: "Centre d'operació per a un equip de suport conversacional",
       story:
-        "Un equip d'atenció al client responia per WhatsApp i Telegram sense saber qui estava saturat, quina conversa portava més temps oberta, ni si estaven complint l'SLA promès. Vam construir la seva taula d'operació: cua prioritzada, assignació automàtica, vista de supervisor en temps real, alertes abans que res s'encalli. Avui l'equip treballa amb visibilitat — i la persona a l'altra banda del xat ho nota.",
+        "Els dilluns a primera hora la cua podia tenir 80 converses esperant. Abans: cada agent obria el primer que veia, els VIP es barrejaven amb consultes de 'gràcies', i a mig matí algú descobria un tiquet esperant des de divendres. Ara: la cua es prioritza automàticament per SLA i tipus de client, cada agent rep el que millor encaixa amb la seva skill, el supervisor veu la càrrega real a la seva pantalla, i si una conversa s'acosta a l'SLA l'alerta salta abans — no després.",
       problem:
-        "Un equip de suport gestionant milers de converses diàries per WhatsApp, Telegram i Instagram, sense enrutament, sense SLA visible i sense saber quin agent estava al límit.",
+        "Un equip de suport gestionant milers de converses diàries per WhatsApp, Telegram i Instagram. Sense enrutament: cada agent agafava converses a l'atzar. Sense SLA visible: l'única manera de saber si una conversa s'endarreria era llegir-la. Sense visibilitat de càrrega: el supervisor no sabia qui estava saturat i qui lliure. Resultat: clients VIP esperant, tiquets antics oblidats i sensació constant d'anar a remolc.",
       built:
-        "Workspace operatiu a mida: cua prioritzada, assignació automàtica per càrrega i skill, SLA per conversa, vista de supervisor amb rendiment per agent i alertes abans que un canal es saturi.",
+        "Workspace operatiu a mida amb tot el que l'equip necessitava en una sola pantalla — cua prioritzada, assignació automàtica, perfil del client al costat de cada conversa, vista de supervisor en temps real i mètriques que de debò accionen decisions. Sobre la seva infraestructura, sense tercers tocant dades de client.",
+      bullets: [
+        "Cua prioritzada per SLA, antiguitat i tipus de client",
+        "Assignació automàtica per càrrega, skill i idioma",
+        "Perfil del client al costat de la conversa: historial, comandes, NPS",
+        "Plantilles de resposta versionades amb variables",
+        "Vista de supervisor: càrrega per agent, risc SLA, distribució per canal",
+        "Alertes abans de l'incompliment, no després",
+        "Escalat a segona línia o a equips específics (billing, devolucions)",
+        "Mètriques reals: CSAT, p50/p95, volum per canal, productivitat per agent",
+      ],
       scope: "Discovery + disseny + build + handover. Manteniment mensual.",
     },
     {

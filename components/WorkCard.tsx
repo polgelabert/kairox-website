@@ -81,6 +81,21 @@ export function WorkCard({
             <dd className="mt-2 text-[var(--color-fg)] leading-relaxed">
               {work.built}
             </dd>
+            {work.bullets && work.bullets.length > 0 ? (
+              <ul className="mt-3 space-y-1.5">
+                {work.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="flex gap-2.5 text-sm text-[var(--color-fg)] leading-relaxed"
+                  >
+                    <span className="mono mt-[2px]" style={{ color: t.accent }}>
+                      ›
+                    </span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
           <div>
             <dt className="mono text-xs uppercase tracking-[0.18em] text-[var(--color-fg-subtle)]">

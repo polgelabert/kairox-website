@@ -124,11 +124,21 @@ export const es: Dictionary = {
       slug: "soporte-conversacional",
       title: "Centro de operación para un equipo de soporte conversacional",
       story:
-        "Un equipo de atención al cliente respondía por WhatsApp y Telegram sin saber quién estaba saturado, qué conversación llevaba más tiempo abierta, ni si estaban cumpliendo el SLA prometido. Construimos su mesa de operación: cola priorizada, asignación automática, vista de supervisor en tiempo real, alertas antes de que algo se atasque. Hoy el equipo trabaja con visibilidad — y la persona al otro lado del chat lo nota.",
+        "Los lunes a primera hora la cola podía tener 80 conversaciones esperando. Antes: cada agente abría lo primero que veía, los VIP se mezclaban con consultas de 'gracias', y a media mañana alguien descubría un ticket esperando desde el viernes. Ahora: la cola se prioriza automáticamente por SLA y tipo de cliente, cada agente recibe lo que mejor encaja con su skill, el supervisor ve la carga real en su pantalla, y si una conversación se acerca al SLA la alerta salta antes — no después.",
       problem:
-        "Un equipo de soporte gestionando miles de conversaciones diarias por WhatsApp, Telegram e Instagram, sin enrutado, sin SLA visible y sin saber qué agente estaba al límite.",
+        "Un equipo de soporte gestionando miles de conversaciones diarias por WhatsApp, Telegram e Instagram. Sin enrutado: cada agente cogía conversaciones al azar. Sin SLA visible: la única forma de saber si una conversación se estaba retrasando era leerla. Sin visibilidad de carga: el supervisor no sabía quién estaba saturado y quién libre. Resultado: clientes VIP esperando, tickets antiguos olvidados y sensación constante de ir a remolque.",
       built:
-        "Workspace operativo a medida: cola priorizada, asignación automática por carga y skill, SLA por conversación, vista de supervisor con rendimiento por agente y alertas antes de que un canal se sature.",
+        "Workspace operativo a medida con todo lo que el equipo necesitaba en una sola pantalla — cola priorizada, asignación automática, perfil del cliente al lado de cada conversación, vista de supervisor en tiempo real y métricas que de verdad accionan decisiones. Sobre su infraestructura, sin terceros tocando datos de cliente.",
+      bullets: [
+        "Cola priorizada por SLA, antigüedad y tipo de cliente",
+        "Asignación automática por carga, skill e idioma",
+        "Perfil del cliente al lado de la conversación: historial, pedidos, NPS",
+        "Plantillas de respuesta versionadas con variables",
+        "Vista de supervisor: carga por agente, riesgo SLA, distribución por canal",
+        "Alertas antes del incumplimiento, no después",
+        "Escalado a segunda línea o a equipos específicos (billing, devoluciones)",
+        "Métricas reales: CSAT, p50/p95, volumen por canal, productividad por agente",
+      ],
       scope: "Discovery + diseño + build + handover. Mantenimiento mensual.",
     },
     {

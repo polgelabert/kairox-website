@@ -42,68 +42,178 @@ export function CaseConsole({
   );
 }
 
-// Case 1 — high-volume monitoring: alert feed + active conversations gauge
+// Case 1 — support workspace: KPI strip + prioritized queue + alerts
 function CaseMonitoring({ accent }: { accent: string }) {
-  const [active, setActive] = useState(2417);
-  const [alerts, setAlerts] = useState<{ k: string; m: string; t: string }[]>([
-    { k: "info", m: "channel WA-ES-2 · queue cleared", t: "now" },
-    { k: "warn", m: "agent.ana · p50 > 60s for 3m", t: "1m" },
-    { k: "ok", m: "auto-route updated · 12 agents", t: "2m" },
-  ]);
+  type Q = { id: string; ch: "WA" | "TG" | "IG"; tier: "vip" | "pri" | "std"; age: string; sla: number };
+  const initialQueue: Q[] = [
+    { id: "ws-892", ch: "WA", tier: "vip", age: "2m", sla: 88 },
+    { id: "tg-104", ch: "TG", tier: "pri", age: "1m", sla: 62 },
+    { id: "ig-203", ch: "IG", tier: "std", age: "0:42", sla: 31 },
+    { id: "ws-893", ch: "WA", tier: "std", age: "0:18", sla: 12 },
+  ];
+  const initialAlerts = [
+    { k: "warn", m: "agent.ana · p50 > 60s · 3m" },
+    { k: "ok", m: "auto-route · 12 agents balanced" },
+    { k: "info", m: "WA-ES-2 · queue cleared" },
+  ];
+  const [active, setActive] = useState(127);
+  const [agents, setAgents] = useState({ on: 11, total: 14 });
+  const [risk, setRisk] = useState(3);
+  const [queue, setQueue] = useState<Q[]>(initialQueue);
+  const [alerts, setAlerts] = useState(initialAlerts);
 
   useEffect(() => {
     let n = 0;
-    const ticker = [
-      { k: "info", m: "channel TG-1 · spike +180/min", t: "now" },
-      { k: "ok", m: "SLA met · WA bucket-A · 98.2%", t: "now" },
-      { k: "warn", m: "burst · IG-DM · 412 unread", t: "now" },
-      { k: "info", m: "agent.lucia · online", t: "now" },
+    const tickAlerts = [
+      { k: "info", m: "TG-1 · spike +180/min" },
+      { k: "ok", m: "SLA met · WA bucket-A · 98.2%" },
+      { k: "warn", m: "burst · IG-DM · 412 unread" },
+      { k: "info", m: "agent.lucia · online" },
+      { k: "ok", m: "ticket #ws-872 · escalated → billing" },
+    ];
+    const newQ = [
+      { id: "tg-105", ch: "TG" as const, tier: "vip" as const, age: "0s", sla: 92 },
+      { id: "ig-204", ch: "IG" as const, tier: "std" as const, age: "0s", sla: 4 },
+      { id: "ws-894", ch: "WA" as const, tier: "pri" as const, age: "0s", sla: 58 },
     ];
     const id = setInterval(() => {
-      setActive((v) => Math.max(800, v + Math.floor(Math.random() * 80) - 30));
-      setAlerts((a) => [ticker[n % ticker.length], ...a].slice(0, 3));
+      setActive((v) => Math.max(60, Math.min(380, v + Math.floor(Math.random() * 14) - 6)));
+      setAgents(() => ({ on: 10 + Math.floor(Math.random() * 5), total: 14 }));
+      setRisk((r) => Math.max(0, Math.min(8, r + (Math.random() < 0.5 ? -1 : 1))));
+      setQueue((q) => [newQ[n % newQ.length], ...q].slice(0, 4));
+      setAlerts((a) => [tickAlerts[n % tickAlerts.length], ...a].slice(0, 3));
       n++;
-    }, 1300);
+    }, 1400);
     return () => clearInterval(id);
   }, []);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-px bg-[var(--color-border)] h-full">
-      <div className="bg-[var(--color-bg-elevated)] p-3 flex flex-col justify-center items-center text-center">
-        <div className="mono text-[9px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)]">
-          active convs
-        </div>
-        <div className="mono text-2xl font-semibold tabular-nums mt-1" style={{ color: accent }}>
-          {active.toLocaleString()}
-        </div>
-        <div className="mono text-[9px] text-[var(--color-fg-subtle)] mt-0.5">live</div>
+    <div className="bg-[var(--color-bg-elevated)] divide-y divide-[var(--color-border)]">
+      {/* KPI strip */}
+      <div className="grid grid-cols-3 divide-x divide-[var(--color-border)]">
+        <Kpi label="active" value={active.toLocaleString()} accent={accent} />
+        <Kpi label="agents" value={`${agents.on} / ${agents.total}`} accent={accent} />
+        <Kpi
+          label="sla risk"
+          value={String(risk)}
+          accent={risk > 4 ? "#fbbf24" : accent}
+          warn={risk > 4}
+        />
       </div>
-      <div className="bg-[var(--color-bg-elevated)] p-3">
-        <div className="mono text-[9px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)] mb-2">
-          alerts · stream
-        </div>
-        <ul className="space-y-1.5">
-          {alerts.map((a, i) => (
-            <li
-              key={`${a.m}-${i}`}
-              className="rounded border border-[var(--color-border)] px-2 py-1.5 mono text-[11px] flex items-center gap-2 animate-[kx-slide_350ms_ease-out]"
-            >
-              <span
-                className="text-[9px] uppercase px-1.5 py-0.5 rounded shrink-0"
-                style={{
-                  background:
-                    a.k === "warn" ? "#fbbf2422" : a.k === "ok" ? `${accent}22` : "#52525222",
-                  color:
-                    a.k === "warn" ? "#fbbf24" : a.k === "ok" ? accent : "var(--color-fg-muted)",
-                }}
+
+      <div className="grid grid-cols-1 sm:grid-cols-[1.1fr_1fr] divide-y sm:divide-y-0 sm:divide-x divide-[var(--color-border)]">
+        {/* Queue */}
+        <div className="p-3">
+          <div className="flex items-center justify-between mb-2">
+            <div className="mono text-[9px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)]">
+              queue · prioritized
+            </div>
+            <div className="mono text-[9px] text-[var(--color-fg-subtle)]">
+              {queue.length} waiting
+            </div>
+          </div>
+          <ul className="space-y-1">
+            {queue.map((q, i) => (
+              <li
+                key={`${q.id}-${i}`}
+                className="rounded border border-[var(--color-border)] px-2 py-1.5 flex items-center gap-2 mono text-[11px] animate-[kx-slide_300ms_ease-out]"
               >
-                {a.k}
-              </span>
-              <span className="text-[var(--color-fg)] truncate flex-1">{a.m}</span>
-            </li>
-          ))}
-        </ul>
+                <span className="text-[var(--color-fg-subtle)] shrink-0">#{q.id}</span>
+                <span
+                  className="text-[9px] uppercase px-1 rounded shrink-0"
+                  style={{ background: `${accent}22`, color: accent }}
+                >
+                  {q.ch}
+                </span>
+                {q.tier !== "std" ? (
+                  <span
+                    className="text-[9px] uppercase px-1 rounded shrink-0"
+                    style={{
+                      background: q.tier === "vip" ? "#fbbf2422" : "#52525222",
+                      color: q.tier === "vip" ? "#fbbf24" : "var(--color-fg-muted)",
+                    }}
+                  >
+                    {q.tier}
+                  </span>
+                ) : null}
+                <span className="ml-auto mono text-[10px] text-[var(--color-fg-subtle)] shrink-0">
+                  {q.age}
+                </span>
+                <SlaBar value={q.sla} accent={accent} />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Alerts */}
+        <div className="p-3">
+          <div className="mono text-[9px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)] mb-2">
+            alerts · live
+          </div>
+          <ul className="space-y-1">
+            {alerts.map((a, i) => (
+              <li
+                key={`${a.m}-${i}`}
+                className="rounded border border-[var(--color-border)] px-2 py-1.5 mono text-[11px] flex items-center gap-2 animate-[kx-slide_300ms_ease-out]"
+              >
+                <span
+                  className="text-[9px] uppercase px-1 rounded shrink-0"
+                  style={{
+                    background:
+                      a.k === "warn" ? "#fbbf2422" : a.k === "ok" ? `${accent}22` : "#52525222",
+                    color:
+                      a.k === "warn" ? "#fbbf24" : a.k === "ok" ? accent : "var(--color-fg-muted)",
+                  }}
+                >
+                  {a.k}
+                </span>
+                <span className="text-[var(--color-fg)] truncate flex-1">{a.m}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
+    </div>
+  );
+}
+
+function Kpi({
+  label,
+  value,
+  accent,
+  warn,
+}: {
+  label: string;
+  value: string;
+  accent: string;
+  warn?: boolean;
+}) {
+  return (
+    <div className="p-3 text-center">
+      <div className="mono text-[9px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)]">
+        {label}
+      </div>
+      <div
+        key={value}
+        className="mono text-lg sm:text-xl font-semibold tabular-nums mt-0.5 animate-[kx-pop_400ms_ease-out]"
+        style={{ color: accent }}
+      >
+        {warn ? "▲ " : ""}
+        {value}
+      </div>
+    </div>
+  );
+}
+
+function SlaBar({ value, accent }: { value: number; accent: string }) {
+  // value is "% of SLA elapsed" — higher = closer to breach
+  const tone = value > 75 ? "#ef4444" : value > 50 ? "#fbbf24" : accent;
+  return (
+    <div className="w-10 h-1 rounded-full bg-[var(--color-bg)] overflow-hidden shrink-0">
+      <div
+        className="h-full transition-all duration-300"
+        style={{ width: `${Math.min(value, 100)}%`, background: tone }}
+      />
     </div>
   );
 }
