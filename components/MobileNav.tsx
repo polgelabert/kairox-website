@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { LangSwitcher } from "./LangSwitcher";
@@ -10,6 +11,11 @@ import type { Locale } from "@/content/types";
 export function MobileNav({ locale }: { locale: Locale }) {
   const d = getDictionary(locale);
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // iOS Safari ignores body { overflow: hidden } — also lock html and
   // pin scroll position so the page underneath can't bleed visually.
@@ -61,7 +67,8 @@ export function MobileNav({ locale }: { locale: Locale }) {
         </svg>
       </button>
 
-      {open ? (
+      {open && mounted
+        ? createPortal(
         <div
           className="md:hidden flex flex-col"
           style={{
@@ -140,7 +147,8 @@ export function MobileNav({ locale }: { locale: Locale }) {
               onNavigate={() => setOpen(false)}
             />
           </div>
-        </div>
+        </div>,
+        document.body
       ) : null}
     </>
   );
