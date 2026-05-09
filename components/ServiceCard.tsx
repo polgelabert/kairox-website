@@ -1,5 +1,6 @@
 import { Service } from "@/content/types";
 import { ServiceVisual } from "./ServiceVisual";
+import { SafeBoundary } from "./SafeBoundary";
 
 const themes = [
   { accent: "#a78bfa", glyph: "▲", visual: "metric" as const },
@@ -52,7 +53,9 @@ export function ServiceCard({
       </p>
 
       <div className="relative mt-6">
-        <ServiceVisual kind={t.visual} accent={t.accent} />
+        <SafeBoundary>
+          <ServiceVisual kind={t.visual} accent={t.accent} />
+        </SafeBoundary>
       </div>
 
       {full ? (

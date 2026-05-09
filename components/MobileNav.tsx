@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { localePath, getDictionary, LOCALES } from "@/lib/i18n";
+import { LangSwitcher } from "./LangSwitcher";
+import { localePath, getDictionary } from "@/lib/i18n";
 import type { Locale } from "@/content/types";
 
 export function MobileNav({ locale }: { locale: Locale }) {
@@ -100,21 +101,12 @@ export function MobileNav({ locale }: { locale: Locale }) {
             </div>
           </nav>
 
-          <div className="px-6 pb-6 mono text-sm text-[var(--color-fg-subtle)] flex items-center gap-3">
-            {LOCALES.map((l) => (
-              <Link
-                key={l}
-                href={`/${l}`}
-                onClick={() => setOpen(false)}
-                className={
-                  l === locale
-                    ? "text-[var(--color-fg-strong)] py-2 px-2"
-                    : "text-[var(--color-fg-subtle)] py-2 px-2"
-                }
-              >
-                {l}
-              </Link>
-            ))}
+          <div className="px-6 pb-6">
+            <LangSwitcher
+              current={locale}
+              variant="menu"
+              onNavigate={() => setOpen(false)}
+            />
           </div>
         </div>
       ) : null}

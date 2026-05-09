@@ -2,6 +2,7 @@ import { Container } from "./ui/Container";
 import { Button } from "./ui/Button";
 import { MonoLabel } from "./ui/Section";
 import { HeroVisual } from "./HeroVisual";
+import { SafeBoundary } from "./SafeBoundary";
 import { localePath, getDictionary } from "@/lib/i18n";
 import type { Locale } from "@/content/types";
 
@@ -49,7 +50,9 @@ export function Hero({ locale }: { locale: Locale }) {
           </div>
 
           <div className="lg:pl-4">
-            <HeroVisual d={d.heroVisual} />
+            <SafeBoundary>
+              <HeroVisual d={d.heroVisual} />
+            </SafeBoundary>
           </div>
         </div>
       </Container>
