@@ -171,10 +171,10 @@ export const es: Dictionary = {
     body: "Kairox es un studio pequeño y deliberado. Sin pirámide, sin cuentas que pasan por tres manos antes de llegar a quien construye. Hablas con quien diseña el sistema y con quien lo construye.",
     techRole: "Co-fundador · Ingeniería",
     techBio:
-      "{{COFOUNDER_TECH_BIO}}",
-    salesRole: "Co-fundador · Operaciones y cliente",
+      "Lidera la ingeniería y la entrega. Python, APIs, bases de datos, infraestructura cloud (Oracle Cloud, RunPod) y pipelines de generación con IA (ComfyUI). Hands-on con Claude Code y automatización de flujos de trabajo.",
+    salesRole: "Co-fundadora · Operaciones y cliente",
     salesBio:
-      "{{COFOUNDER_SALES_BIO}}",
+      "Lidera la relación con cliente, el scoping y las propuestas. Punto de contacto único desde la primera llamada hasta la entrega y más allá. Se asegura de que lo que se promete sea exactamente lo que se construye.",
   },
   contact: {
     eyebrow: "contacto",
@@ -221,10 +221,10 @@ export const es: Dictionary = {
       title: "Aviso legal",
       body: `En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa de los siguientes datos identificativos del titular del sitio web:
 
-· Razón social: {{RAZON_SOCIAL}}
-· CIF: {{CIF}}
-· Domicilio social: {{DIRECCION_FISCAL}}
-· Email de contacto: {{EMAIL_CONTACTO}}
+· Razón social: Kairox Nexus Digital SL
+· CIF: B25903097
+· Domicilio social: Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)
+· Email de contacto: kairoxnd@gmail.com
 · Datos registrales: {{DATOS_REGISTRALES}}
 
 El acceso y uso de este sitio web atribuye la condición de usuario e implica la aceptación de los términos recogidos en el presente Aviso Legal. El titular se reserva el derecho de modificar cualquier contenido del sitio web sin previo aviso.
@@ -233,17 +233,17 @@ Todos los contenidos del sitio (textos, imágenes, código, diseño gráfico) so
 
 El titular se compromete a no realizar publicidad engañosa. Los errores formales o numéricos que pudiera contener el sitio serán corregidos en cuanto se detecten.
 
-Para cualquier cuestión relacionada con este Aviso Legal, puedes contactar en {{EMAIL_CONTACTO}}.`,
+Para cualquier cuestión relacionada con este Aviso Legal, puedes contactar en kairoxnd@gmail.com.`,
     },
     privacidad: {
       title: "Política de privacidad",
-      body: `Esta Política de Privacidad describe cómo {{RAZON_SOCIAL}} (en adelante, "Kairox") trata los datos personales recabados a través de este sitio web, conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).
+      body: `Esta Política de Privacidad describe cómo Kairox Nexus Digital SL (en adelante, "Kairox") trata los datos personales recabados a través de este sitio web, conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).
 
 1. RESPONSABLE DEL TRATAMIENTO
-· Razón social: {{RAZON_SOCIAL}}
-· CIF: {{CIF}}
-· Domicilio: {{DIRECCION_FISCAL}}
-· Email: {{EMAIL_CONTACTO}}
+· Razón social: Kairox Nexus Digital SL
+· CIF: B25903097
+· Domicilio: Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)
+· Email: kairoxnd@gmail.com
 
 2. DATOS QUE RECABAMOS
 A través del formulario de contacto recabamos: nombre, empresa (opcional), email y el contenido del mensaje. No recabamos datos de categorías especiales.
@@ -261,7 +261,7 @@ Conservamos los datos durante el tiempo necesario para atender tu consulta y, en
 No cedemos datos a terceros salvo obligación legal. Utilizamos proveedores de hosting y email transaccional dentro del Espacio Económico Europeo o con garantías adecuadas.
 
 7. DERECHOS
-Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a {{EMAIL_CONTACTO}}. Tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).
+Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a kairoxnd@gmail.com. Tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).
 
 8. SEGURIDAD
 Aplicamos medidas técnicas y organizativas razonables para proteger tus datos.`,
@@ -287,7 +287,7 @@ Puedes configurar tu navegador para bloquear o eliminar cookies en cualquier mom
 CAMBIOS
 Podemos actualizar esta Política de Cookies. Cualquier cambio se publicará en esta misma página.
 
-Para cualquier consulta sobre cookies, escríbenos a {{EMAIL_CONTACTO}}.`,
+Para cualquier consulta sobre cookies, escríbenos a kairoxnd@gmail.com.`,
     },
   },
   routes: {

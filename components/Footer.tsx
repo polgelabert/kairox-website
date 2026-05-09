@@ -55,7 +55,7 @@ export function Footer({ locale }: { locale: Locale }) {
 
         <div className="mt-16 pt-6 border-t border-[var(--color-border)] flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--color-fg-subtle)] mono">
           <div>
-            © {year} {`{{RAZON_SOCIAL}}`} · CIF {`{{CIF}}`} · {`{{DIRECCION_FISCAL}}`}
+            © {year} Kairox · CIF B25903097 · Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)
           </div>
           <div>{d.footer.rights}</div>
         </div>

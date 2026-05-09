@@ -170,9 +170,11 @@ export const en: Dictionary = {
     title: "Two partners. Technical depth and commercial focus.",
     body: "Kairox is a small, deliberate studio. No pyramid, no accounts that pass through three hands before reaching the person who builds. You talk to the people who design the system and the people who build it.",
     techRole: "Co-founder · Engineering",
-    techBio: "{{COFOUNDER_TECH_BIO}}",
+    techBio:
+      "Leads engineering and delivery. Python, APIs, databases, cloud infrastructure (Oracle Cloud, RunPod) and AI generation pipelines (ComfyUI). Hands-on with Claude Code and workflow automation.",
     salesRole: "Co-founder · Operations & client",
-    salesBio: "{{COFOUNDER_SALES_BIO}}",
+    salesBio:
+      "Leads client relationships, scoping and proposals. Single point of contact from first call to delivery and beyond. Makes sure what's promised is exactly what gets built.",
   },
   contact: {
     eyebrow: "contact",
@@ -219,27 +221,27 @@ export const en: Dictionary = {
       title: "Legal notice",
       body: `In compliance with Article 10 of Spain's Law 34/2002 on Information Society Services and Electronic Commerce (LSSI-CE), the following identification details of the website owner are provided:
 
-· Company name: {{RAZON_SOCIAL}}
-· Tax ID (CIF): {{CIF}}
-· Registered office: {{DIRECCION_FISCAL}}
-· Contact email: {{EMAIL_CONTACTO}}
+· Company name: Kairox Nexus Digital SL
+· Tax ID (CIF): B25903097
+· Registered office: Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)
+· Contact email: kairoxnd@gmail.com
 · Registry data: {{DATOS_REGISTRALES}}
 
 Access to and use of this website grants user status and implies acceptance of the terms set out in this Legal Notice. The owner reserves the right to modify any content of the site without prior notice.
 
 All content on the site (text, images, code, graphic design) is owned by the owner or used with appropriate authorization. Total or partial reproduction without express authorization is prohibited.
 
-For any matter related to this Legal Notice, contact us at {{EMAIL_CONTACTO}}.`,
+For any matter related to this Legal Notice, contact us at kairoxnd@gmail.com.`,
     },
     privacidad: {
       title: "Privacy policy",
-      body: `This Privacy Policy describes how {{RAZON_SOCIAL}} ("Kairox") processes personal data collected through this website, in accordance with Regulation (EU) 2016/679 (GDPR) and Spanish Organic Law 3/2018 on Personal Data Protection (LOPDGDD).
+      body: `This Privacy Policy describes how Kairox Nexus Digital SL ("Kairox") processes personal data collected through this website, in accordance with Regulation (EU) 2016/679 (GDPR) and Spanish Organic Law 3/2018 on Personal Data Protection (LOPDGDD).
 
 1. DATA CONTROLLER
-· Company name: {{RAZON_SOCIAL}}
-· Tax ID: {{CIF}}
-· Address: {{DIRECCION_FISCAL}}
-· Email: {{EMAIL_CONTACTO}}
+· Company name: Kairox Nexus Digital SL
+· Tax ID: B25903097
+· Address: Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)
+· Email: kairoxnd@gmail.com
 
 2. DATA WE COLLECT
 Through the contact form we collect: name, company (optional), email and message content. We do not collect special categories of data.
@@ -257,7 +259,7 @@ We retain data for the time necessary to handle your enquiry and, where applicab
 We do not transfer data to third parties except by legal obligation. We use hosting and transactional email providers within the European Economic Area or with adequate safeguards.
 
 7. RIGHTS
-You may exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to {{EMAIL_CONTACTO}}. You have the right to lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).
+You may exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to kairoxnd@gmail.com. You have the right to lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).
 
 8. SECURITY
 We apply reasonable technical and organizational measures to protect your data.`,
@@ -283,7 +285,7 @@ You can configure your browser to block or delete cookies at any time. See your 
 CHANGES
 We may update this Cookie Policy. Any changes will be published on this same page.
 
-For any cookie-related enquiries, write to us at {{EMAIL_CONTACTO}}.`,
+For any cookie-related enquiries, write to us at kairoxnd@gmail.com.`,
     },
   },
   routes: {

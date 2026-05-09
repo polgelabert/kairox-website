@@ -43,12 +43,12 @@ export default async function AboutPage({
         <div className="grid gap-6 md:grid-cols-2">
           <Founder
             role={d.about.techRole}
-            name="{{COFOUNDER_TECH_NAME}}"
+            name="Pol Gelabert"
             bio={d.about.techBio}
           />
           <Founder
             role={d.about.salesRole}
-            name="{{COFOUNDER_SALES_NAME}}"
+            name="Andrea Nicolás"
             bio={d.about.salesBio}
           />
         </div>

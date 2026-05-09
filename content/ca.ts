@@ -171,9 +171,11 @@ export const ca: Dictionary = {
     title: "Dos socis. Profunditat tècnica i focus comercial.",
     body: "Kairox és un studio petit i deliberat. Sense piràmide, sense comptes que passen per tres mans abans d'arribar a qui construeix. Parles amb qui dissenya el sistema i amb qui el construeix.",
     techRole: "Co-fundador · Enginyeria",
-    techBio: "{{COFOUNDER_TECH_BIO}}",
-    salesRole: "Co-fundador · Operacions i client",
-    salesBio: "{{COFOUNDER_SALES_BIO}}",
+    techBio:
+      "Lidera l'enginyeria i el lliurament. Python, APIs, bases de dades, infraestructura cloud (Oracle Cloud, RunPod) i pipelines de generació amb IA (ComfyUI). Hands-on amb Claude Code i automatització de fluxos de treball.",
+    salesRole: "Co-fundadora · Operacions i client",
+    salesBio:
+      "Lidera la relació amb el client, l'scoping i les propostes. Punt de contacte únic des de la primera trucada fins al lliurament i més enllà. Vetlla perquè el que es promet sigui exactament el que es construeix.",
   },
   contact: {
     eyebrow: "contacte",
@@ -220,27 +222,27 @@ export const ca: Dictionary = {
       title: "Avís legal",
       body: `En compliment de l'article 10 de la Llei 34/2002, d'11 de juliol, de Serveis de la Societat de la Informació i Comerç Electrònic (LSSI-CE), s'informa de les següents dades identificatives del titular del lloc web:
 
-· Raó social: {{RAZON_SOCIAL}}
-· CIF: {{CIF}}
-· Domicili social: {{DIRECCION_FISCAL}}
-· Email de contacte: {{EMAIL_CONTACTO}}
+· Raó social: Kairox Nexus Digital SL
+· CIF: B25903097
+· Domicili social: Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)
+· Email de contacte: kairoxnd@gmail.com
 · Dades registrals: {{DATOS_REGISTRALES}}
 
 L'accés i ús d'aquest lloc web atribueix la condició d'usuari i implica l'acceptació dels termes recollits en el present Avís Legal.
 
 Tots els continguts del lloc (textos, imatges, codi, disseny gràfic) són titularitat del titular o disposen de la corresponent autorització per a la seva utilització. Queda prohibida la reproducció total o parcial sense autorització expressa.
 
-Per a qualsevol qüestió relacionada amb aquest Avís Legal, pots contactar a {{EMAIL_CONTACTO}}.`,
+Per a qualsevol qüestió relacionada amb aquest Avís Legal, pots contactar a kairoxnd@gmail.com.`,
     },
     privacidad: {
       title: "Política de privacitat",
-      body: `Aquesta Política de Privacitat descriu com {{RAZON_SOCIAL}} ("Kairox") tracta les dades personals recollides a través d'aquest lloc web, conforme al Reglament (UE) 2016/679 (RGPD) i la Llei Orgànica 3/2018 de Protecció de Dades Personals (LOPDGDD).
+      body: `Aquesta Política de Privacitat descriu com Kairox Nexus Digital SL ("Kairox") tracta les dades personals recollides a través d'aquest lloc web, conforme al Reglament (UE) 2016/679 (RGPD) i la Llei Orgànica 3/2018 de Protecció de Dades Personals (LOPDGDD).
 
 1. RESPONSABLE DEL TRACTAMENT
-· Raó social: {{RAZON_SOCIAL}}
-· CIF: {{CIF}}
-· Domicili: {{DIRECCION_FISCAL}}
-· Email: {{EMAIL_CONTACTO}}
+· Raó social: Kairox Nexus Digital SL
+· CIF: B25903097
+· Domicili: Revolt Negre 4, Cornellà de Llobregat 08940 (Barcelona)
+· Email: kairoxnd@gmail.com
 
 2. DADES QUE RECOLLIM
 A través del formulari de contacte recollim: nom, empresa (opcional), email i contingut del missatge. No recollim dades de categories especials.
@@ -258,7 +260,7 @@ Conservem les dades durant el temps necessari per atendre la teva consulta i, si
 No cedim dades a tercers excepte per obligació legal. Utilitzem proveïdors de hosting i email transaccional dins de l'Espai Econòmic Europeu o amb garanties adequades.
 
 7. DRETS
-Pots exercir els drets d'accés, rectificació, supressió, oposició, limitació i portabilitat escrivint a {{EMAIL_CONTACTO}}. Tens dret a presentar una reclamació davant l'Agència Espanyola de Protecció de Dades (www.aepd.es).
+Pots exercir els drets d'accés, rectificació, supressió, oposició, limitació i portabilitat escrivint a kairoxnd@gmail.com. Tens dret a presentar una reclamació davant l'Agència Espanyola de Protecció de Dades (www.aepd.es).
 
 8. SEGURETAT
 Apliquem mesures tècniques i organitzatives raonables per protegir les teves dades.`,
@@ -281,7 +283,7 @@ NO utilitzem cookies de:
 GESTIÓ DE COOKIES
 Pots configurar el teu navegador per bloquejar o eliminar cookies en qualsevol moment.
 
-Per a qualsevol consulta sobre cookies, escriu-nos a {{EMAIL_CONTACTO}}.`,
+Per a qualsevol consulta sobre cookies, escriu-nos a kairoxnd@gmail.com.`,
     },
   },
   routes: {

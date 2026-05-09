@@ -48,21 +48,15 @@ export default async function ContactPage({
             <div>
               <MonoLabel>{d.contact.emailLabel}</MonoLabel>
               <a
-                href="mailto:{{EMAIL_CONTACTO}}"
+                href="mailto:kairoxnd@gmail.com"
                 className="block mt-3 text-lg text-[var(--color-fg-strong)] hover:text-[var(--color-accent)] transition-colors mono"
               >
-                {`{{EMAIL_CONTACTO}}`}
+                {`kairoxnd@gmail.com`}
               </a>
             </div>
-            <div>
-              <MonoLabel>{d.contact.bookingLabel}</MonoLabel>
-              <a
-                href="{{CALCOM_URL}}"
-                className="block mt-3 text-lg text-[var(--color-fg-strong)] hover:text-[var(--color-accent)] transition-colors mono"
-              >
-                {`{{CALCOM_URL}}`}
-              </a>
-            </div>
+            {/* Booking block hidden until a real Cal.com URL is set.
+                Replace null below with the cal.com link when ready. */}
+            {null}
           </aside>
         </div>
       </Section>

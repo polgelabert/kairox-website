@@ -1,33 +1,66 @@
 import { Container } from "./ui/Container";
 import { Button } from "./ui/Button";
 import { MonoLabel } from "./ui/Section";
+import { HeroVisual } from "./HeroVisual";
 import { localePath, getDictionary } from "@/lib/i18n";
 import type { Locale } from "@/content/types";
 
 export function Hero({ locale }: { locale: Locale }) {
   const d = getDictionary(locale);
+
+  // Highlight the closing phrase of the headline by splitting at the
+  // last comma/period — works across ES/EN/CA without per-locale logic.
+  const headline = d.hero.headline;
+  const splitAt = Math.max(headline.lastIndexOf(","), 0);
+  const headHead = splitAt > 0 ? headline.slice(0, splitAt + 1) : headline;
+  const headTail = splitAt > 0 ? headline.slice(splitAt + 1) : "";
+
   return (
     <div className="relative overflow-hidden">
       <div className="absolute inset-0 hero-glow pointer-events-none" />
-      <Container className="relative pt-24 pb-24 sm:pt-32 sm:pb-32">
-        <div className="max-w-3xl">
-          <MonoLabel>{d.hero.eyebrow}</MonoLabel>
-          <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-[var(--color-fg-strong)] text-balance leading-[1.05]">
-            {d.hero.headline}
-          </h1>
-          <p className="mt-7 text-lg sm:text-xl text-[var(--color-fg-muted)] leading-relaxed max-w-2xl">
-            {d.hero.subhead}
-          </p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Button href={localePath(locale, "contact")} variant="primary">
-              {d.hero.cta} →
-            </Button>
-            <Button href={localePath(locale, "services")} variant="secondary">
-              {d.hero.secondaryCta}
-            </Button>
+      <Container className="relative pt-20 pb-20 sm:pt-28 sm:pb-28">
+        <div className="grid gap-14 lg:gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center">
+          <div>
+            <MonoLabel>{d.hero.eyebrow}</MonoLabel>
+            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-balance leading-[1.05]">
+              <span className="text-[var(--color-fg-strong)]">{headHead}</span>
+              {headTail ? (
+                <span className="kx-gradient-text"> {headTail.trim()}</span>
+              ) : null}
+            </h1>
+            <p className="mt-7 text-lg sm:text-xl text-[var(--color-fg-muted)] leading-relaxed max-w-2xl">
+              {d.hero.subhead}
+            </p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Button href={localePath(locale, "contact")} variant="primary">
+                {d.hero.cta} →
+              </Button>
+              <Button href={localePath(locale, "services")} variant="secondary">
+                {d.hero.secondaryCta}
+              </Button>
+            </div>
+            <div className="mt-12 flex items-center gap-5 text-[var(--color-fg-subtle)] mono text-xs">
+              <Platform name="WhatsApp" />
+              <Platform name="Telegram" />
+              <Platform name="Instagram" />
+              <Platform name="Reddit" />
+              <Platform name="TikTok" />
+            </div>
+          </div>
+
+          <div className="lg:pl-4">
+            <HeroVisual />
           </div>
         </div>
       </Container>
     </div>
+  );
+}
+
+function Platform({ name }: { name: string }) {
+  return (
+    <span className="hover:text-[var(--color-fg-muted)] transition-colors">
+      {name}
+    </span>
   );
 }

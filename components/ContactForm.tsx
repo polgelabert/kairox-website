@@ -6,7 +6,7 @@ import { Button } from "./ui/Button";
 import { Dictionary, Locale } from "@/content/types";
 import { localePath } from "@/lib/i18n";
 
-const CONTACT_EMAIL = "{{EMAIL_CONTACTO}}";
+const CONTACT_EMAIL = "kairoxnd@gmail.com";
 
 export function ContactForm({
   d,
