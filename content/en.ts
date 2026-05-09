@@ -121,26 +121,32 @@ export const en: Dictionary = {
   },
   work: [
     {
-      slug: "messaging-monitoring",
-      title: "Monitoring platform for high-volume chat operation",
+      slug: "support-workspace",
+      title: "Operations workspace for a conversational support team",
+      story:
+        "A customer-support team was answering on WhatsApp and Telegram with no idea who was overloaded, which conversation had been open longest, or whether they were hitting their promised SLA. We built their operations workspace: prioritized queue, automatic assignment, real-time supervisor view, alerts before anything jams. The team now works with visibility — and the person on the other side of the chat feels it.",
       problem:
-        "A team handling thousands of daily conversations across multiple messaging surfaces with no unified visibility into performance or per-agent load.",
+        "A support team handling thousands of daily conversations across WhatsApp, Telegram and Instagram with no routing, no visible SLA, and no idea which agent was at the limit.",
       built:
-        "Real-time custom platform unifying response metrics, agent performance and conversion analytics in a single dashboard. Direct ingestion from platform APIs, own storage, configurable alerts.",
+        "Custom operations workspace: prioritized queue, automatic assignment by load and skill, per-conversation SLA, supervisor view with per-agent performance and alerts before a channel saturates.",
       scope: "Discovery + design + build + handover. Monthly maintenance.",
     },
     {
       slug: "multi-platform-social-ops",
-      title: "Multi-platform social operations system",
+      title: "Social command center wired into the internal system",
+      story:
+        "The brand used a social media tool for publishing and a separate internal system for orders. Every time a DM or comment asked about an invoice, a shipment, or an account status, the agent jumped between three tabs. We built a command center on their cloud that reads directly from their ERP: the team sees the customer's order next to the message and responds with context in one click.",
       problem:
-        "An operation with simultaneous presence on Instagram, Facebook, Reddit and TikTok managing everything from scattered tools, with context loss across channels.",
+        "A brand with active presence on Instagram, Facebook, Reddit and TikTok was paying for two tools — one to publish and another for support — and agents still had to jump to a third internal system every time a DM asked something concrete. Off-the-shelf tools don't integrate with their backend.",
       built:
-        "Command center consolidating management of all four platforms: scheduling, cross-posting with platform-native adaptation, DM and comment triage in one inbox, centralized performance analytics.",
+        "Custom command center on their infrastructure: scheduling with platform-native adaptation, single inbox for comments and DMs, direct read from ERP/CRM alongside each conversation (orders, subscriptions, invoices), versioned content library.",
       scope: "Discovery + incremental build + ongoing roadmap.",
     },
     {
       slug: "telegram-broadcast",
-      title: "Telegram automation infrastructure",
+      title: "Telegram infrastructure for a community business",
+      story:
+        "A channel with thousands of subscribers had outgrown its tooling. We built the full stack — bot with real business logic, segmented broadcast, payments and automated moderation. The first busy weekend scaled without flinching.",
       problem:
         "A Telegram-channel and community business needing segmented broadcast, subscription management and moderation tooling that scaled with growth.",
       built:
@@ -150,6 +156,8 @@ export const en: Dictionary = {
     {
       slug: "ai-pipelines",
       title: "AI generation pipelines on cloud GPU",
+      story:
+        "The client was generating image and video at volume, but the local workflow didn't scale — neither in speed nor cost. We moved generation to cloud GPU with custom orchestration on top of ComfyUI. Same team, same quality, several times more output at the same cost.",
       problem:
         "A visual generation workflow (image and video) that didn't scale on local hardware in either speed or cost.",
       built:

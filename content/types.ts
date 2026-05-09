@@ -15,6 +15,7 @@ export type Service = {
 export type WorkCase = {
   slug: string;
   title: string;
+  story: string;
   problem: string;
   built: string;
   scope: string;

@@ -108,55 +108,80 @@ function CaseMonitoring({ accent }: { accent: string }) {
   );
 }
 
-// Case 2 — multi-platform: scheduled queue + cross-post status
+// Case 2 — unified inbox with ERP context pulled alongside each DM
 function CaseSocialOps({ accent }: { accent: string }) {
-  const queue = [
-    { p: ["IG", "FB"], h: "Spring drop · teaser", t: "+15m" },
-    { p: ["TikTok"], h: "@nochegris · stitch", t: "+1h" },
-    { p: ["IG", "FB", "X"], h: "Founder note · launch", t: "+3h" },
-    { p: ["Reddit"], h: "r/saas · AMA", t: "tomorrow" },
+  type Item = {
+    p: string;
+    who: string;
+    msg: string;
+    ctx: { l: string; v: string; tone: "ok" | "warn" | "muted" };
+  };
+  const initial: Item[] = [
+    { p: "IG", who: "@laura.s", msg: "hola, sigue mi pedido aquí?", ctx: { l: "ORDER", v: "#4821 · enviado hace 2d", tone: "ok" } },
+    { p: "FB", who: "Mireia G.", msg: "puc cancel·lar la subscripció?", ctx: { l: "SUB", v: "activa · €29/mo · 14m", tone: "muted" } },
+    { p: "Reddit", who: "u/devwithcat", msg: "issue con factura de febrero", ctx: { l: "INVOICE", v: "INV-241 · paid 02-15", tone: "ok" } },
+    { p: "TikTok", who: "@nochegris", msg: "envíos a USA?", ctx: { l: "CONTACT", v: "nuevo · sin pedidos", tone: "warn" } },
   ];
-  const [step, setStep] = useState(0);
+  const extras: Item[] = [
+    { p: "IG", who: "@oriol_pm", msg: "talla L del pack disponible?", ctx: { l: "STOCK", v: "L · 12u · alm-MAD", tone: "ok" } },
+    { p: "X", who: "@sergio_b", msg: "podéis facturar en USD?", ctx: { l: "ACCOUNT", v: "EU · multidivisa on", tone: "muted" } },
+    { p: "FB", who: "Anna R.", msg: "no me llega el código del cupón", ctx: { l: "PROMO", v: "SPRING25 · 1/1 usos", tone: "warn" } },
+  ];
+  const [items, setItems] = useState<Item[]>(initial);
+
   useEffect(() => {
-    const id = setInterval(() => setStep((s) => (s + 1) % 6), 900);
+    let i = 0;
+    const id = setInterval(() => {
+      setItems((prev) => [extras[i % extras.length], ...prev].slice(0, 4));
+      i++;
+    }, 2200);
     return () => clearInterval(id);
   }, []);
 
   return (
     <div className="bg-[var(--color-bg-elevated)] p-3">
-      <div className="mono text-[9px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)] mb-2">
-        scheduled queue · multi-platform
+      <div className="flex items-center justify-between mb-2">
+        <div className="mono text-[9px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)]">
+          unified inbox · with erp context
+        </div>
+        <div className="mono text-[9px] flex items-center gap-1" style={{ color: accent }}>
+          <span className="w-1 h-1 rounded-full" style={{ background: accent }} />
+          erp · synced
+        </div>
       </div>
       <ul className="space-y-1.5">
-        {queue.map((q, i) => {
-          const publishing = i === step % queue.length;
-          return (
-            <li
-              key={i}
-              className="rounded border border-[var(--color-border)] px-2.5 py-2 flex items-center gap-2.5 mono text-[11px] transition-colors"
-              style={publishing ? { borderColor: accent, background: `${accent}10` } : {}}
-            >
-              <div className="flex gap-1 shrink-0">
-                {q.p.map((p) => (
-                  <span
-                    key={p}
-                    className="text-[9px] uppercase px-1.5 py-0.5 rounded"
-                    style={{ background: `${accent}22`, color: accent }}
-                  >
-                    {p}
-                  </span>
-                ))}
-              </div>
-              <span className="text-[var(--color-fg)] truncate flex-1">{q.h}</span>
-              <span className="text-[var(--color-fg-subtle)] shrink-0">{q.t}</span>
-              {publishing ? (
-                <span className="ml-1 mono text-[9px] uppercase shrink-0" style={{ color: accent }}>
-                  · pub
-                </span>
-              ) : null}
-            </li>
-          );
-        })}
+        {items.map((it, i) => (
+          <li
+            key={`${it.who}-${it.msg}-${i}`}
+            className="rounded border border-[var(--color-border)] px-2.5 py-2 mono text-[11px] animate-[kx-slide_350ms_ease-out]"
+          >
+            <div className="flex items-center gap-2">
+              <span
+                className="text-[9px] uppercase px-1.5 py-0.5 rounded shrink-0"
+                style={{ background: `${accent}22`, color: accent }}
+              >
+                {it.p}
+              </span>
+              <span className="text-[var(--color-fg-strong)] shrink-0">{it.who}</span>
+              <span className="text-[var(--color-fg-muted)] truncate flex-1">{it.msg}</span>
+            </div>
+            <div className="mt-1.5 pl-1 flex items-center gap-2 text-[10px]">
+              <span className="text-[var(--color-fg-subtle)] tracking-[0.12em]">› erp · {it.ctx.l}</span>
+              <span
+                style={{
+                  color:
+                    it.ctx.tone === "ok"
+                      ? "#7fd1de"
+                      : it.ctx.tone === "warn"
+                      ? "#fbbf24"
+                      : "var(--color-fg-muted)",
+                }}
+              >
+                {it.ctx.v}
+              </span>
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   );

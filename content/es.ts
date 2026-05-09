@@ -121,26 +121,32 @@ export const es: Dictionary = {
   },
   work: [
     {
-      slug: "monitorizacion-mensajeria",
-      title: "Plataforma de monitorización para servicio de chat de alto volumen",
+      slug: "soporte-conversacional",
+      title: "Centro de operación para un equipo de soporte conversacional",
+      story:
+        "Un equipo de atención al cliente respondía por WhatsApp y Telegram sin saber quién estaba saturado, qué conversación llevaba más tiempo abierta, ni si estaban cumpliendo el SLA prometido. Construimos su mesa de operación: cola priorizada, asignación automática, vista de supervisor en tiempo real, alertas antes de que algo se atasque. Hoy el equipo trabaja con visibilidad — y la persona al otro lado del chat lo nota.",
       problem:
-        "Un equipo gestionando miles de conversaciones diarias a través de varias superficies de mensajería sin visibilidad unificada del rendimiento ni de la carga por agente.",
+        "Un equipo de soporte gestionando miles de conversaciones diarias por WhatsApp, Telegram e Instagram, sin enrutado, sin SLA visible y sin saber qué agente estaba al límite.",
       built:
-        "Plataforma a medida en tiempo real que unifica métricas de respuesta, rendimiento por agente y analítica de conversión en un único dashboard. Ingesta directa desde APIs de plataforma, almacenamiento propio, alertas configurables.",
+        "Workspace operativo a medida: cola priorizada, asignación automática por carga y skill, SLA por conversación, vista de supervisor con rendimiento por agente y alertas antes de que un canal se sature.",
       scope: "Discovery + diseño + build + handover. Mantenimiento mensual.",
     },
     {
       slug: "ops-sociales-multi-plataforma",
-      title: "Sistema de operaciones sociales multi-plataforma",
+      title: "Command center social conectado al sistema interno",
+      story:
+        "La marca usaba una herramienta de social media para publicar y un sistema interno separado para gestionar pedidos. Cuando llegaba un DM o un comentario preguntando por una factura, un envío o el estado de una cuenta, el agente saltaba entre tres pestañas. Construimos un command center sobre su nube que lee directamente de su ERP: el equipo ve el pedido del cliente al lado del mensaje y responde con contexto en un click.",
       problem:
-        "Una operación con presencia simultánea en Instagram, Facebook, Reddit y TikTok gestionando todo desde herramientas dispersas, con pérdidas de contexto entre canales.",
+        "Una marca con presencia en Instagram, Facebook, Reddit y TikTok pagaba dos herramientas — una para publicar y otra para soporte — y aún así sus agentes saltaban a un tercer sistema interno cada vez que un DM preguntaba algo concreto. Lo off-the-shelf no se integra con su backend.",
       built:
-        "Command center que consolida la gestión de las cuatro plataformas: programación, cross-posting con adaptación nativa por superficie, triage de comentarios y DMs en una bandeja única, analítica de rendimiento centralizada.",
+        "Command center a medida sobre su infraestructura: programación con adaptación nativa por canal, bandeja única para comentarios y DMs, lectura directa del ERP/CRM al lado de cada conversación (pedidos, suscripciones, facturas), biblioteca de contenidos versionada.",
       scope: "Discovery + build incremental + roadmap continuo.",
     },
     {
       slug: "telegram-broadcast",
-      title: "Infraestructura de automatización en Telegram",
+      title: "Infraestructura de Telegram para un negocio de comunidad",
+      story:
+        "Un canal con miles de suscriptores había crecido más rápido que sus herramientas. Montamos la infraestructura completa — bot con lógica de negocio real, broadcast segmentado, cobros y moderación automatizada. El primer fin de semana ocupado escaló sin parpadear.",
       problem:
         "Un negocio basado en canales y comunidad de Telegram que necesitaba broadcast segmentado, gestión de suscripciones y herramientas de moderación que escalaran con el crecimiento.",
       built:
@@ -150,6 +156,8 @@ export const es: Dictionary = {
     {
       slug: "ai-pipelines",
       title: "Pipelines de generación con IA en GPU cloud",
+      story:
+        "El cliente generaba imagen y vídeo a volumen, pero su flujo local no escalaba ni en velocidad ni en coste. Movimos toda la generación a GPU cloud con orquestación a medida sobre ComfyUI. Mismo equipo, misma calidad, varias veces más output al mismo coste.",
       problem:
         "Un flujo de trabajo intensivo en generación visual (imagen y vídeo) que en local no escalaba ni en velocidad ni en coste.",
       built:

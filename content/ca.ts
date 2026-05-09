@@ -122,26 +122,32 @@ export const ca: Dictionary = {
   },
   work: [
     {
-      slug: "monitoritzacio-missatgeria",
-      title: "Plataforma de monitorització per a servei de xat d'alt volum",
+      slug: "suport-conversacional",
+      title: "Centre d'operació per a un equip de suport conversacional",
+      story:
+        "Un equip d'atenció al client responia per WhatsApp i Telegram sense saber qui estava saturat, quina conversa portava més temps oberta, ni si estaven complint l'SLA promès. Vam construir la seva taula d'operació: cua prioritzada, assignació automàtica, vista de supervisor en temps real, alertes abans que res s'encalli. Avui l'equip treballa amb visibilitat — i la persona a l'altra banda del xat ho nota.",
       problem:
-        "Un equip gestionant milers de converses diàries a través de diverses superfícies de missatgeria sense visibilitat unificada del rendiment ni de la càrrega per agent.",
+        "Un equip de suport gestionant milers de converses diàries per WhatsApp, Telegram i Instagram, sense enrutament, sense SLA visible i sense saber quin agent estava al límit.",
       built:
-        "Plataforma a mida en temps real que unifica mètriques de resposta, rendiment per agent i analítica de conversió en un únic dashboard. Ingesta directa des d'APIs de plataforma, emmagatzematge propi, alertes configurables.",
+        "Workspace operatiu a mida: cua prioritzada, assignació automàtica per càrrega i skill, SLA per conversa, vista de supervisor amb rendiment per agent i alertes abans que un canal es saturi.",
       scope: "Discovery + disseny + build + handover. Manteniment mensual.",
     },
     {
       slug: "ops-socials-multi-plataforma",
-      title: "Sistema d'operacions socials multi-plataforma",
+      title: "Command center social connectat al sistema intern",
+      story:
+        "La marca utilitzava una eina de social media per publicar i un sistema intern separat per gestionar comandes. Cada vegada que arribava un DM o un comentari preguntant per una factura, un enviament o l'estat d'un compte, l'agent saltava entre tres pestanyes. Vam construir un command center sobre el seu núvol que llegeix directament del seu ERP: l'equip veu la comanda del client al costat del missatge i respon amb context amb un sol clic.",
       problem:
-        "Una operació amb presència simultània a Instagram, Facebook, Reddit i TikTok gestionant tot des d'eines disperses, amb pèrdues de context entre canals.",
+        "Una marca amb presència a Instagram, Facebook, Reddit i TikTok pagava dues eines — una per publicar i una altra per a suport — i tot i així els agents havien de saltar a un tercer sistema intern cada vegada que un DM preguntava alguna cosa concreta. L'off-the-shelf no s'integra amb el seu backend.",
       built:
-        "Command center que consolida la gestió de les quatre plataformes: programació, cross-posting amb adaptació nativa per superfície, triatge de comentaris i DMs en una bústia única, analítica de rendiment centralitzada.",
+        "Command center a mida sobre la seva infraestructura: programació amb adaptació nativa per canal, bústia única per a comentaris i DMs, lectura directa de l'ERP/CRM al costat de cada conversa (comandes, subscripcions, factures), biblioteca de continguts versionada.",
       scope: "Discovery + build incremental + roadmap continu.",
     },
     {
       slug: "telegram-broadcast",
-      title: "Infraestructura d'automatització a Telegram",
+      title: "Infraestructura de Telegram per a un negoci de comunitat",
+      story:
+        "Un canal amb milers de subscriptors havia crescut més ràpid que les seves eines. Vam muntar la infraestructura completa — bot amb lògica de negoci real, broadcast segmentat, cobraments i moderació automatitzada. El primer cap de setmana ocupat va escalar sense parpellejar.",
       problem:
         "Un negoci basat en canals i comunitat de Telegram que necessitava broadcast segmentat, gestió de subscripcions i eines de moderació que escalessin amb el creixement.",
       built:
@@ -151,6 +157,8 @@ export const ca: Dictionary = {
     {
       slug: "ai-pipelines",
       title: "Pipelines de generació amb IA en GPU cloud",
+      story:
+        "El client generava imatge i vídeo a volum, però el seu flux local no escalava ni en velocitat ni en cost. Vam moure tota la generació a GPU cloud amb orquestració a mida sobre ComfyUI. Mateix equip, mateixa qualitat, diverses vegades més output al mateix cost.",
       problem:
         "Un flux de treball intensiu en generació visual (imatge i vídeo) que en local no escalava ni en velocitat ni en cost.",
       built:

@@ -58,6 +58,10 @@ export function WorkCard({
           {work.title}
         </h3>
 
+        <p className="mt-4 text-[15px] leading-relaxed text-[var(--color-fg)]">
+          {work.story}
+        </p>
+
         <dl className="mt-6 space-y-5">
           <div>
             <dt className="mono text-xs uppercase tracking-[0.18em] text-[var(--color-fg-subtle)]">
